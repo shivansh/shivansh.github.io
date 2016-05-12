@@ -11,8 +11,8 @@ title                    : "Home"
 title_separator          : "-"
 name                     : "Shivansh Rai"
 description              : "My personal blog"
-url                      : http://shivrai.github.io/
-baseurl                  : #/blog
+url                      : http://shivrai.github.io
+baseurl                  : 
 gh_repo                  :
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
@@ -73,7 +73,7 @@ author:
   flickr           :
   facebook         : https://www.facebook.com/shivansh.rai.75
   foursquare       :
-  github           : https://github.com/shivrai/
+  github           : shivrai/
   google_plus      :
   keybase          :
   instagram        :
@@ -89,8 +89,6 @@ author:
   weibo            :
   xing             :
   youtube          :
-
-include: ["_pages"]
 
 defaults:
   # _posts

@@ -1,9 +1,9 @@
 # main links links
 main:
 
-  - title: "About"
-    url: /about/
-
-  - title: "Posts"
-    url: 
+  - title: "GSoC-16"
+    url: /gsoc/
+    
+  - title: "About me"
+    url: /about.html
 
