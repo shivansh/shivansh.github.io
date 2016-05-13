@@ -78,7 +78,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : https://www.linkedin.com/in/shivansh-rai-16b451100?trk=hp-identity-name
+  linkedin         : https://www.linkedin.com/in/shivansh-rai-16b451100 
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -99,7 +99,7 @@ defaults:
   # _posts
   - scope:
       path: ""
-      type: pages
+      type: posts
     values:
       layout: single
       author_profile: true
@@ -124,6 +124,7 @@ defaults:
       layout: pages
       author_profile: true
       share: true
+      comments: true
 
 # Reading Files
 include:
