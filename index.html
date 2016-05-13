@@ -11,6 +11,12 @@ author_profile: true
   {% include archive-single.html %}
 {% endfor %}
 
+<h1 class="archive__subtitle">GSoC updates</h1>
+
+{% for post in site.gsoc %}                    
+  {% include archive-single.html type="list" %}
+{% endfor %}                                   
+
 <br><font size="3">PS: check out the new email address &#x1F601;</font>
 
 {% include paginator.html %}

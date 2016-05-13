@@ -121,7 +121,7 @@ defaults:
       path: ""
       type: gsoc
     values:
-      layout: pages
+      layout: single
       author_profile: true
       share: true
       comments: true
@@ -130,6 +130,7 @@ defaults:
 include:
   - .htaccess
   - _pages
+  #- assets/js/plugins
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
