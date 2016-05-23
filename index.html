@@ -7,15 +7,16 @@ author_profile: true
 
 <h1 class="archive__subtitle">Posts</h1>
 
-{% for post in paginator.posts %}
-  {% include archive-single.html %}
+{% for post in site.posts %}
+  {% include archive-single.html type="list" %}
 {% endfor %}
+<br>
 
 <h1 class="archive__subtitle">GSoC updates</h1>
 
-{% for post in site.gsoc %}                    
+{% for post in site.gsoc %}
   {% include archive-single.html type="list" %}
-{% endfor %}                                   
+{% endfor %}
 
 <br><font size="3">PS: check out the new email address &#x1F601;</font>
 
