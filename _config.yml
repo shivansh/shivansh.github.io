@@ -11,15 +11,15 @@ title                    : "Home"
 title_separator          : "-"
 name                     : "Shivansh Rai"
 description              : "My personal blog"
-url                      : #http://shivrai.github.io
-baseurl                  : 
+url                      : http://shivrai.github.io
+baseurl                  :
 gh_repo                  :
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
-comments: 
+comments:
   provider               :  "disqus" # true (default), "disqus", "facebook", "google-plus"
-  disqus: 
+  disqus:
     shortname            : shainet # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
@@ -78,7 +78,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : https://www.linkedin.com/in/shivansh-rai-16b451100 
+  linkedin         : https://www.linkedin.com/in/shivansh-rai-16b451100
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
