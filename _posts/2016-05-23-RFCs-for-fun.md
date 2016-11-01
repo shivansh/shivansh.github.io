@@ -2,7 +2,7 @@
 title: "RFCs for fun"
 ---
 <br>
-Most of my time spent in front of computer nowadays (which itself comprises of most of the time I am awake &#x1F60B; ) is going through RFCs and wikipedia. But when something funny hits you when it's expectations are the least, its worth a gem. So today I came across a funny article about a successful implementation of an RFC which was supposed to be an April Fool's joke by David Waitzman (RFC 1149 to be specific). This protocol is entirely based on the fact that IP is dumb (pun intended) and makes very few assumptions about the link layer below it. In fact it is so dumb that one can use pigeons as a substitute for wifi/ethernet. This protocol was actually taken seriously by a group of Norwegian Linux geeks and they actually demonstrated it. Here is there experiment.
+Most of my time spent in front of computer nowadays (which itself comprises of most of the time I am awake &#x1F60B; ) is going through RFCs and wikipedia. But when something funny hits you when it's expectations are the least, its worth a gem. So today I came across a funny article about a successful implementation of an RFC which was supposed to be an April Fool's joke by David Waitzman (RFC 1149 to be specific). This protocol is entirely based on the fact that IP is dumb (pun intended) and makes very few assumptions about the link layer below it. In fact it is so dumb that one can use pigeons as a substitute for wifi/ethernet (again, pun intended). This protocol was actually taken seriously by a group of Norwegian Linux geeks and they actually demonstrated it. Here is there experiment.
 
 ```
 Script started on Sat Apr 28 11:24:09 2001
@@ -32,4 +32,4 @@ Script done on Sat Apr 28 14:14:28 2001
 
 Linux geeks are also cool, eh ?
 
-PS. Turns out that there is a whole list of such April Fool's RFCs... since you have already spent some time coming down till here, head over to [here](https://www.wikiwand.com/en/April_Fools%27_Day_Request_for_Comments) for some more good time &#x1F60B;.
+PS. Turns out that there is a whole list of such April Fool's RFCs... since you have already spent some time coming down till here, head over to [here](https://www.wikiwand.com/en/April_Fools%27_Day_Request_for_Comments) for some more good time.
