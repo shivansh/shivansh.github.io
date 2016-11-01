@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Google Summer of Code '16"
+title: "<u>Google Summer of Code '16</u>"
 permalink: /gsoc/
 author_profile: true
 ---
@@ -13,4 +13,4 @@ author_profile: true
   {% endfor %}
 </div>
 
-
+***

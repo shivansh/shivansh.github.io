@@ -6,7 +6,7 @@
    Typography
    ========================================================================== */
 
-$doc-font-size              : 16;
+$doc-font-size              : 10;
 
 /* paragraph indention */
 $paragraph-indent           : false; // true, false (default)
@@ -28,7 +28,7 @@ $bodoni                     : "Bodoni MT", serif;
 $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
-$global-font-family         : $monospace;
+$global-font-family         : $serif;
 $header-font-family         : $sans-serif;
 $caption-font-family        : $serif;
 
@@ -38,7 +38,10 @@ $type-size-2                : 1.953em;  // ~31.248px
 $type-size-3                : 1.563em;  // ~25.008px
 $type-size-4                : 1.25em;   // ~20px
 $type-size-5                : 1em;      // ~16px
-$type-size-6                : 0.75em;   // ~12px
+
+/* Post meta info */
+$type-size-6                : 0.9em;   // ~12px
+
 $type-size-7                : 0.83em; // ~11px
 $type-size-8                : 0.625em;  // ~10px
 
@@ -48,16 +51,17 @@ $type-size-8                : 0.625em;  // ~10px
    ========================================================================== */
 
 $gray                       : #7a8288;
+$mix-gray                   : mix(#000, $gray, 20%);
 $dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
+$darker-gray                : mix(#000, $gray, 80%);
 $light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+$lighter-gray               : mix(#fff, $gray, 55%);
 
 $body-color                 : #fff;
 $background-color           : #fff;
 $code-background-color      : #fafafa;
 $code-background-color-dark : $light-gray;
-$text-color                 : $dark-gray;
+$text-color                 : $darker-gray;
 $border-color               : $lighter-gray;
 
 $primary-color              : #7a8288;
