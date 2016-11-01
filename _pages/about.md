@@ -4,7 +4,18 @@ layout: single
 sitemap: false
 permalink: /about
 ---
+<br>
 
+```
+                                           o o o
+                                     _____      o       _______
+                            ____====  ]OO|_n_n__][.     |Hello|
+                           [________]_|__|________)<    |World|
+                            oo    oo  'oo OOOO-| oo\_   ~~~|~~~
+                   +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+```
+
+<br>
 Howdy!! <br>
 By way of introduction, I am Shivansh Rai, a junior at the department of Mathematics and Scientific Computing, Indian Institute of Technology Kanpur.
 

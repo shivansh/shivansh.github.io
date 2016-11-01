@@ -3,6 +3,14 @@ title: "Final results and conclusions"
 layout: single
 ---
 
+<br>
+GSoC is finally over, and to say the least it was an experience of a lifetime. I got an awesome review from my mentor, to whom I cannot be thankful enough for all the support.<br>
+<center><img src="/images/gsoc-final-evaluation.png"></center>
+<br>
+This post summarizes all the work done in the entire duration of 4 months.
+
+***
+
 ## Overview
 
 Regression testing is one of the most critical elements of the test artifacts and proves to be one of the most preventive measures for testing a software. Currently, within FreeBSD, there is no such tool to perform regression testing of the TCP/IP network stack. The purpose of this project is to develop tests using a regression testing tool which can then be integrated with FreeBSD. Once integrated, the tool will also facilitate further development of such tests. The regression testing tool of choice here is <i>packetdrill</i>.
