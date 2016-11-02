@@ -2,7 +2,7 @@
 title: "Interesting error while running packetdrill scripts"
 layout: single
 ---
-<br>
+
 Recently, I came across an error when I ran packetdrill scripts against my TUN device. The error was that there was a conflict in the scripts expected packet and the packet which was actually sniffed during the run. Something like this -
 <br>
 

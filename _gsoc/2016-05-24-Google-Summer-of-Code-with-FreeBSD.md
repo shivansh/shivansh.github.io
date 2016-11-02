@@ -12,7 +12,7 @@ This is the abstract for my project -
 
 Currently, community bonding period is going on in which we are supposed to get comfortable with the community and to make a plan of action for the time when the actual coding starts (23 May). I have already contributed 6 tests (the <a href="https://github.com/hirenp/packetdrill/pulls" target="_blank">pull requests</a> are yet to be merged &#x1F60B;), and currently studying various TCP scenarios upon which further tests will be made.
 
-**Update**: The coding period starts now, let the hacking begin !!
+**<u>Update</u>**: The coding period starts now, let the hacking begin !!
 
 This <a href="http://shivrai.github.io/gsoc/">section</a> of the blog will be updated regularly with the progress of the project, and the intrinsic details regarding the project can be found in the <a href="https://www.gitbook.com/book/shivrai/tcp-ip/details" target="_blank">git-book</a>. Plus you can also have a look at my FreeBSD <a href="https://wiki.freebsd.org/SummerOfCode2016/TCP-IP-RegressionTestSuite" target="_blank">wiki</a> for more details regarding the project.
 
