@@ -20,7 +20,7 @@ words_per_minute         : 200
 comments:
   provider               :  "disqus" # true (default), "disqus", "facebook", "google-plus"
   disqus:
-    shortname            : shainet # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : shivansh # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
@@ -63,8 +63,8 @@ google_ad_slot           :
 author:
   name             : "Shivansh Rai"
   avatar           : "profile.jpg"
-  bio              : #"I am an amazing person."
-  location         : #"Somewhere"
+  bio              : " Programmer. Systems & Networks enthusiast. Shell dweller.<br> :computer: :coffee: :pizza: :sleeping: :repeat:"
+  location         :
   email            : shivansh@freebsd.org
   uri              :
   bitbucket        :
@@ -132,7 +132,7 @@ defaults:
 include:
   - .htaccess
   - _pages
-  #- assets/js/plugins
+
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"

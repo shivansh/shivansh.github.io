@@ -40,9 +40,11 @@ $type-size-4                : 1.25em;   // ~20px
 $type-size-5                : 1em;      // ~16px
 
 /* Post meta info */
-$type-size-6                : 0.9em;   // ~12px
+$type-size-6                : 0.99em;   // ~12px
 
-$type-size-7                : 0.83em; // ~11px
+/* Sidebar links */
+$type-size-7                : 0.86em; // ~11px
+
 $type-size-8                : 0.625em;  // ~10px
 
 
@@ -118,7 +120,7 @@ $x-large                    : 1280px;
    Grid
    ========================================================================== */
 
-$right-sidebar-width-narrow : 200px;
+$right-sidebar-width-narrow : 900px;
 $right-sidebar-width        : 300px;
 $right-sidebar-width-wide   : 400px;
 

@@ -19,6 +19,7 @@
 /* serif typefaces */
 /* type scale */
 /* Post meta info */
+/* Sidebar links */
 /*
    Colors
    ========================================================================== */
@@ -217,16 +218,16 @@ h3 {
   font-size: 1em; }
 
 h4 {
-  font-size: 0.9em; }
+  font-size: 0.99em; }
 
 h5 {
-  font-size: 0.9em; }
+  font-size: 0.99em; }
 
 h6 {
-  font-size: 0.9em; }
+  font-size: 0.99em; }
 
 small, .small {
-  font-size: 0.9em; }
+  font-size: 0.99em; }
 
 p {
   margin-bottom: 1.3em; }
@@ -285,7 +286,7 @@ figcaption > code,
 td > code {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
-  font-size: 0.9em;
+  font-size: 0.99em;
   background: #fafafa;
   border: 1px solid #c3c7c9;
   border-radius: 4px;
@@ -356,7 +357,7 @@ figcaption {
   margin-bottom: 0.5em;
   color: #525354;
   font-family: Georgia, Times, serif;
-  font-size: 0.9em; }
+  font-size: 0.99em; }
   figcaption a {
     color: inherit;
     text-decoration: none;
@@ -689,7 +690,7 @@ body:hover .visually-hidden button {
   color: #9ba1a6; }
   .footnotes ol, .footnotes li, .footnotes p {
     margin-bottom: 0;
-    font-size: 0.9em; }
+    font-size: 0.99em; }
 
 a.reversefootnote {
   color: #7a8288;
@@ -712,7 +713,7 @@ table {
   margin-bottom: 1em;
   width: 100%;
   font-family: Georgia, Times, serif;
-  font-size: 0.9em;
+  font-size: 0.99em;
   border-collapse: collapse;
   border: 1px solid #bdc1c4; }
   table + table {
@@ -749,7 +750,7 @@ tr, td, th {
   padding: 0.5em 1em;
   color: #fff !important;
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.9em;
+  font-size: 0.99em;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -834,7 +835,7 @@ tr, td, th {
   .btn--large {
     font-size: 1em; }
   .btn--small {
-    font-size: 0.83em; }
+    font-size: 0.86em; }
 
 /* ==========================================================================
    NOTICE TEXT BLOCKS
@@ -851,7 +852,7 @@ tr, td, th {
   margin: 2em 0 !important;
   padding: 1em;
   font-family: Georgia, Times, serif;
-  font-size: 0.9em !important;
+  font-size: 0.99em !important;
   text-indent: initial;
   background-color: #f8f9f9;
   border-radius: 4px;
@@ -881,7 +882,7 @@ tr, td, th {
   margin: 2em 0 !important;
   padding: 1em;
   font-family: Georgia, Times, serif;
-  font-size: 0.9em !important;
+  font-size: 0.99em !important;
   text-indent: initial;
   background-color: #f2f3f3;
   border-radius: 4px;
@@ -911,7 +912,7 @@ tr, td, th {
   margin: 2em 0 !important;
   padding: 1em;
   font-family: Georgia, Times, serif;
-  font-size: 0.9em !important;
+  font-size: 0.99em !important;
   text-indent: initial;
   background-color: #eef7fa;
   border-radius: 4px;
@@ -941,7 +942,7 @@ tr, td, th {
   margin: 2em 0 !important;
   padding: 1em;
   font-family: Georgia, Times, serif;
-  font-size: 0.9em !important;
+  font-size: 0.99em !important;
   text-indent: initial;
   background-color: #fef4e6;
   border-radius: 4px;
@@ -971,7 +972,7 @@ tr, td, th {
   margin: 2em 0 !important;
   padding: 1em;
   font-family: Georgia, Times, serif;
-  font-size: 0.9em !important;
+  font-size: 0.99em !important;
   text-indent: initial;
   background-color: #eff9ef;
   border-radius: 4px;
@@ -1001,7 +1002,7 @@ tr, td, th {
   margin: 2em 0 !important;
   padding: 1em;
   font-family: Georgia, Times, serif;
-  font-size: 0.9em !important;
+  font-size: 0.99em !important;
   text-indent: initial;
   background-color: #fdefef;
   border-radius: 4px;
@@ -1072,7 +1073,7 @@ tr, td, th {
 .masthead__menu-item {
   display: block;
   list-style-type: none;
-  font-size: 0.9em;
+  font-size: 0.99em;
   white-space: nowrap; }
   .masthead__menu-item--lg {
     font-size: 1em; }
@@ -1113,7 +1114,7 @@ tr, td, th {
   .breadcrumbs ol {
     padding: 0;
     list-style: none;
-    font-size: 0.9em; }
+    font-size: 0.99em; }
     @media (min-width: 64em) {
       .breadcrumbs ol {
         width: 83.05085%;
@@ -1346,7 +1347,7 @@ tr, td, th {
   margin: 0.5rem 0;
   padding: 0.5rem 0;
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.9em;
+  font-size: 0.99em;
   font-weight: bold;
   text-transform: uppercase;
   border-bottom: 1px solid #c3c7c9; }
@@ -1365,7 +1366,7 @@ tr, td, th {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125); }
   .toc .nav__title {
     color: #fff;
-    font-size: 0.9em;
+    font-size: 0.99em;
     background: #7a8288;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px; }
@@ -1380,7 +1381,7 @@ tr, td, th {
     display: block;
     padding: 0.5rem 1rem;
     color: #7a8288;
-    font-size: 0.83em;
+    font-size: 0.86em;
     font-weight: bold;
     line-height: 1.5;
     border-bottom: 1px solid #c3c7c9; }
@@ -1430,7 +1431,7 @@ tr, td, th {
 
 .page__footer-copyright {
   font-family: Georgia, Times, serif;
-  font-size: 0.83em; }
+  font-size: 0.86em; }
   @media (min-width: 64em) {
     .page__footer-copyright {
       padding-left: 21.18644%; } }
@@ -1447,7 +1448,7 @@ tr, td, th {
   padding-top: 5px;
   padding-bottom: 5px;
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.9em;
+  font-size: 0.99em;
   text-transform: uppercase; }
 .page__footer-follow li + li:before {
   content: "";
@@ -1475,14 +1476,14 @@ div.highlighter-rouge, figure.highlight {
     background-color: #c3c7c9;
     content: "\f121";
     font-family: "fontawesome" !important;
-    font-size: 0.9em;
+    font-size: 0.99em;
     line-height: 1;
     text-transform: none;
     speak: none; }
   div.highlighter-rouge .highlight, figure.highlight .highlight {
     margin: 0;
     font-family: Monaco, Consolas, "Lucida Console", monospace;
-    font-size: 0.83em;
+    font-size: 0.86em;
     line-height: 1.8; }
 
 .highlight table td {
@@ -2054,7 +2055,7 @@ select:focus {
   margin-bottom: 20px;
   padding: 8px 20px;
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 0.99em;
   background-color: #fff;
   color: #000;
   border-width: 2px !important;
@@ -2139,9 +2140,9 @@ select:focus {
   .page__content dd {
     margin-left: 1em;
     font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-    font-size: 0.9em; }
+    font-size: 0.99em; }
   .page__content .small {
-    font-size: 0.9em; }
+    font-size: 0.99em; }
   .page__content blockquote + .small {
     margin-top: -1.5em;
     padding-left: 1.25rem; }
@@ -2200,7 +2201,7 @@ select:focus {
   padding: 2px 5px;
   color: #fff;
   font-family: Georgia, Times, serif;
-  font-size: 0.83em;
+  font-size: 0.86em;
   background: #000;
   text-align: right;
   z-index: 5;
@@ -2233,7 +2234,7 @@ select:focus {
 
 .page__share-title {
   margin-bottom: 10px;
-  font-size: 0.9em;
+  font-size: 0.99em;
   text-transform: uppercase; }
 
 /*
@@ -2243,7 +2244,7 @@ select:focus {
   margin-top: 2em;
   color: #9ba1a6;
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 0.9em; }
+  font-size: 0.99em; }
   .page__meta p {
     margin: 0; }
   .page__meta a {
@@ -2251,7 +2252,7 @@ select:focus {
 
 .page__meta-title {
   margin-bottom: 10px;
-  font-size: 0.9em;
+  font-size: 0.99em;
   text-transform: uppercase; }
 
 /*
@@ -2288,7 +2289,7 @@ select:focus {
   margin-top: 2rem;
   margin-bottom: 10px;
   padding-top: 2rem;
-  font-size: 0.9em;
+  font-size: 0.99em;
   border-top: 1px solid #c3c7c9;
   text-transform: uppercase; }
 
@@ -2314,7 +2315,7 @@ select:focus {
 
 .page__related-title {
   margin-bottom: 10px;
-  font-size: 0.9em;
+  font-size: 0.99em;
   text-transform: uppercase; }
 
 /* ==========================================================================
@@ -2342,8 +2343,7 @@ select:focus {
 .archive__subtitle {
   margin: 1.414em 0 0;
   padding-bottom: 0.5em;
-  font-size: 1em;
-  color: #7b8389;
+  color: #000;
   border-bottom: 1px solid #c3c7c9; }
   .archive__subtitle + .list__item .archive__item-title {
     margin-top: 0.5em; }
@@ -2355,7 +2355,7 @@ select:focus {
 
 .archive__item-excerpt {
   margin-top: 0;
-  font-size: 0.9em; }
+  font-size: 0.99em; }
   .archive__item-excerpt + p {
     text-indent: 0; }
 
@@ -2375,7 +2375,7 @@ a:hover .archive__item-title {
    ========================================================================== */
 @media (min-width: 48em) {
   .list__item {
-    padding-right: 200px; } }
+    padding-right: 900px; } }
 @media (min-width: 64em) {
   .list__item {
     padding-right: 300px; } }
@@ -2439,7 +2439,7 @@ a:hover .archive__item-title {
         max-height: 120px; }
       .grid__item .archive__item-excerpt {
         display: block;
-        font-size: 0.9em; } }
+        font-size: 0.99em; } }
 
 /*
    Features
@@ -2570,10 +2570,10 @@ a:hover .archive__item-title {
     font-size: 1em; }
   .sidebar p, .sidebar li {
     font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-    font-size: 0.9em;
+    font-size: 0.86em;
     line-height: 1.5; }
   .sidebar img {
-    width: 100%; }
+    max-width: 100%; }
 
 .sidebar__right {
   margin-bottom: 1em; }
@@ -2581,7 +2581,7 @@ a:hover .archive__item-title {
     .sidebar__right {
       position: relative;
       float: right;
-      width: 200px;
+      width: 900px;
       margin-left: 2.54237%;
       z-index: 10; } }
   @media (min-width: 80em) {
@@ -2602,12 +2602,11 @@ a:hover .archive__item-title {
       width: auto;
       height: auto; } }
   .author__avatar img {
-    max-width: 110px;
+    max-width: 120px;
     border-radius: 50%; }
     @media (min-width: 64em) {
       .author__avatar img {
-        padding: 5px;
-        border: 1px solid #c3c7c9; } }
+        padding: 5px; } }
 
 .author__content {
   display: table-cell;
@@ -2618,7 +2617,7 @@ a:hover .archive__item-title {
   @media (min-width: 64em) {
     .author__content {
       display: block;
-      width: 100%;
+      width: 115%;
       padding-left: 0;
       padding-right: 0; } }
 
@@ -2630,11 +2629,12 @@ a:hover .archive__item-title {
       margin-bottom: 10px; } }
 
 .sidebar .author__name {
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-  font-size: 1em; }
+  font-family: cursive;
+  font-size: 1.25em; }
 
 .author__bio {
-  margin: 0; }
+  margin: 0;
+  font-style: italic; }
   @media (min-width: 64em) {
     .author__bio {
       margin-top: 10px;
@@ -2711,16 +2711,15 @@ a:hover .archive__item-title {
   .author__urls li {
     white-space: nowrap; }
   .author__urls a {
-    display: block;
     margin-bottom: 5px;
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
     color: inherit;
-    font-size: 1em;
+    font-size: 0.89em;
     text-decoration: none; }
     .author__urls a:hover {
-      text-decoration: underline; }
+      font-size: 1.01em; }
 
 /*!
  *  Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome

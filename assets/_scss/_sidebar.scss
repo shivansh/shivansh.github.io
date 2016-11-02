@@ -35,12 +35,12 @@
 
   p, li {
     font-family: $sans-serif;
-    font-size: $type-size-6;
+    font-size: $type-size-7;
     line-height: 1.5;
   }
 
   img {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -77,12 +77,12 @@
   }
 
   img {
-    max-width: 110px;
+    max-width: 120px;
     border-radius: 50%;
 
     @include breakpoint($large) {
       padding: 5px;
-      border: 1px solid $border-color;
+      //border: 1px solid $border-color;
     }
   }
 }
@@ -96,7 +96,7 @@
 
   @include breakpoint($large) {
     display: block;
-    width: 100%;
+    width: 115%;
     padding-left: 0;
     padding-right: 0;
   }
@@ -110,13 +110,15 @@
     margin-bottom: 10px;
   }
 }
+
 .sidebar .author__name {
-  font-family: $sans-serif;
-  font-size: $type-size-5;
+  font-family: cursive;
+  font-size: $type-size-4;
 }
 
 .author__bio {
   margin: 0;
+  font-style: italic;
 
   @include breakpoint($large) {
     margin-top: 10px;
@@ -214,17 +216,18 @@
   }
 
   a {
-    display: block;
+    // display: block;
     margin-bottom: 5px;
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
     color: inherit;
-    font-size: $type-size-5;
+    font-size: $type-size-7 + 0.03em;
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+      // text-decoration: underline;
+      font-size: $type-size-7 + 0.15em;
     }
   }
 }

@@ -5,19 +5,17 @@ author_profile: true
 
 {% include base_path %}
 
-<h1 class="archive__subtitle">Posts</h1>
+<h2 class="archive__subtitle">Recent Posts</h2>
 
 {% for post in site.posts %}
   {% include archive-single.html type="list" %}
 {% endfor %}
 <br>
 
-<h1 class="archive__subtitle">GSoC updates</h1>
+<h2 class="archive__subtitle">GSoC updates</h2>
 
 {% for post in site.gsoc %}
   {% include archive-single.html type="list" %}
 {% endfor %}
-
-<br><font size="3">PS: check out my new email address &#x1F601;</font>
 
 {% include paginator.html %}
