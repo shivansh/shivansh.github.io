@@ -5,14 +5,14 @@ author_profile: true
 
 {% include base_path %}
 
-<h2 class="archive__subtitle">Recent Posts</h2>
+<h2 class="archive__subtitle">Recent Posts</h2><br>
 
 {% for post in site.posts %}
   {% include archive-single.html type="list" %}
 {% endfor %}
 <br>
 
-<h2 class="archive__subtitle">GSoC updates</h2>
+<h2 class="archive__subtitle">GSoC updates</h2><br>
 
 {% for post in site.gsoc %}
   {% include archive-single.html type="list" %}

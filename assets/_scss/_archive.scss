@@ -34,9 +34,11 @@
 }
 
 .archive__item-title {
+  display: inline;
   margin-bottom: 0.25em;
   font-family: $sans-serif-narrow;
   font-size: $type-size-5;
+  color: $dark-gray;
 }
 
 .archive__item-excerpt {
@@ -62,7 +64,9 @@ a:hover {
   }
 
   .archive__item-title {
-    text-decoration: underline;
+    //text-decoration: underline;
+    font-size: $type-size-5 + 0.05em;
+    color: #000;
   }
 }
 
