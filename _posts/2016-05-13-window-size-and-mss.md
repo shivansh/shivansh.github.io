@@ -3,7 +3,7 @@ title: "window size, mss, mtu...what's all the fuss about?"
 layout: single
 ---
 
-So it has been some time since I started reading about TCP/IP and networks in detail, and there is one thing which confused me a lot initially- windows, transmission units and segments. When given a first read, they sound nearly same, well not same but one may be tempted to think "Why was there even a need to define them separately?". So let's go slowly about each of them, and then try to figure out where the difference lies.
+So it has been some time since I started reading about TCP/IP and networks in detail, and there is one thing which confused me a lot initially - windows, transmission units and segments. When given a first read, they sound nearly same, well not same but one may be tempted to think "Why was there even a need to define them separately?". So let's go slowly about each of them, and then try to figure out where the difference lies.
 
 ## TCP windows
 When we think about TCP, there are two entities on which transport depends - the capacity of the network and the capacity of the endpoints (namely the client and the server). **Congestion window** marks the limit of data which can be held by the network, a process known as **Congestion control** and the **Receive window** tries not to exceed the capacity of the receiver to process data, a process known as **Flow control**.

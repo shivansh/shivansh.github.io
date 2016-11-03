@@ -1,17 +1,4 @@
-```
-______                               _   _     _
-| ___ \                             | | | |   | |
-| |_/ /__ _ __ ___  ___  _ __   __ _| | | |__ | | ___   __ _
-|  __/ _ \ '__/ __|/ _ \| '_ \ / _` | | | '_ \| |/ _ \ / _` |
-| | |  __/ |  \__ \ (_) | | | | (_| | | | |_) | | (_) | (_| |
-\_|  \___|_|  |___/\___/|_| |_|\__,_|_| |_.__/|_|\___/ \__, |
-                                                        __/ |
-                                                       |___/
-```
+# Personal Blog
 
-## Quick tips
-* Font size - **_reset.scss**
-* Execute - `sass --watch assets/_scss/main.scss:assets/css/main.css` for dynamic compilation of scss files.
-
-## Todo
-* Display gsoc posts in latest first format.
+The website is alive at http://shivrai.github.io <br>
+P.S. will update the domain pretty soon when I get some time.

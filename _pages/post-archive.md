@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "<u>Posts</u>"
+title: "<u>All Posts</u>"
 permalink: /posts/
 author_profile: true
 ---
