@@ -1,0 +1,11 @@
+language: ruby
+
+before_install:
+  - rvm install 2.1.5
+
+install:
+  - bundle update
+  - bundle install
+
+script:
+  - bundle exec jekyll build
