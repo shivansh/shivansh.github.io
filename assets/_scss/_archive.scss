@@ -1,6 +1,6 @@
 /* ==========================================================================
-   ARCHIVE
-   ========================================================================== */
+ARCHIVE
+========================================================================== */
 
 .archive {
   margin-bottom: 2em;
@@ -20,6 +20,10 @@
   }
 }
 
+.archive_title {
+  display: block;
+}
+
 /* main page headers like Posts and GSoC Updates */
 .archive__subtitle {
   margin: 1.414em 0 0;
@@ -30,6 +34,10 @@
 
   + .list__item .archive__item-title {
     margin-top: 0.5em;
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
@@ -65,16 +73,14 @@ a:hover {
   }
 
   .archive__item-title {
-    text-decoration: underline;
-    //font-size: $type-size-5 + 0.05em;
-    //color: #000;
+    color: #000;
   }
 }
 
 
 /*
-   List view
-   ========================================================================== */
+List view
+========================================================================== */
 
 .list__item {
   @include breakpoint($medium) {
@@ -96,8 +102,8 @@ a:hover {
 
 
 /*
-   Grid view
-   ========================================================================== */
+Grid view
+========================================================================== */
 
 .grid__item {
   margin-bottom: 2em;
@@ -113,6 +119,7 @@ a:hover {
 
   .archive__item-excerpt {
     display: none;
+
   }
 
   @include breakpoint($small) {
@@ -140,8 +147,8 @@ a:hover {
 
 
 /*
-   Features
-   ========================================================================== */
+Features
+========================================================================== */
 
 .feature__wrapper {
   @include clearfix();

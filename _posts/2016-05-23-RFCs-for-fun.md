@@ -3,7 +3,7 @@ title: "RFCs for fun"
 layout: single
 ---
 
-Most of my time spent in front of computer nowadays (which itself comprises of most of the time I am awake) is going through RFCs and wikipedia. But when something funny hits you when it's expectations are the least, its worth a gem. So today I came across a funny article about a successful implementation of an RFC which was supposed to be an April Fool's joke by David Waitzman (<u>RFC 1149</u> to be specific). This protocol is entirely based on the fact that *IP is dumb* (pun intended) and makes very few assumptions about the link layer below it. In fact it is so dumb that one can use pigeons as a substitute for wifi/ethernet (again, pun intended). This protocol was actually taken seriously by a group of Norwegian Linux geeks and they actually demonstrated it. Here is there experiment they conducted in 2001.
+Most of my time spent in front of computer nowadays (which itself comprises of most of the time I am awake) is going through RFCs and wikipedia. But when something funny hits you when it's expectations are the least, its worth a gem. So today I came across a funny article about a successful implementation of an RFC which was supposed to be an April Fool's joke by David Waitzman (<u>RFC 1149</u> to be specific). This protocol is entirely based on the fact that *IP is dumb* (pun intended, although it seems obvious) and makes very few assumptions about the link layer below it. In fact it is so dumb that one can use pigeons as a substitute for wifi/ethernet (again, pun intended). This protocol was actually taken seriously by a group of Norwegian Linux geeks and they actually demonstrated it. Here is there experiment they conducted in 2001.
 
 ```
 Script started on Sat Apr 28 11:24:09 2001

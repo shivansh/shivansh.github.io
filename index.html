@@ -8,14 +8,18 @@ author_profile: true
 <h2 class="archive__subtitle"><a href="/posts/">Recent Posts</a></h2><br>
 
 {% for post in site.posts %}
+<div class="archive_title">
   {% include archive-single.html type="list" %}
+</div>
 {% endfor %}
 <br>
 
 <h2 class="archive__subtitle"><a href="/gsoc/">GSoC updates</a></h2><br>
 
 {% for post in site.gsoc %}
+<div class="archive_title">
   {% include archive-single.html type="list" %}
+</div>
 {% endfor %}
 
 {% include paginator.html %}
