@@ -4,7 +4,7 @@ layout: single
 ---
 
 So it has been some time since I started reading about TCP/IP and networks in detail, and there is one thing which confused me a lot initially - window size, transmission unit and segment size. When given a first read, they tend to seem nearly same, well not same but one might be tempted to think "Why was there even a need to define these separately?". <br>
-So let's go slowly about each of them, and then try to figure out where the difference lies.
+So let's go through each of them, and then try to figure out where the difference lies.
 
 ## TCP windows
 When we think about TCP, there are two entities on which transport depends - the capacity of the network and the capacity of the endpoints (the client and the server). **Congestion window** marks the limit of data which can be held by the network, a process known as **congestion control** and the **receive window** tries not to exceed the capacity of the receiver to process data, a process known as **flow control**.
@@ -20,12 +20,14 @@ MTU is the largest size packet or frame, specified in octets, that can be sent i
 
 The confusing part is, on reading the above, one might wonder where actually do **frames**, **packets** and **segments** differ? This diagram pretty much summarises the differences.<br><br>
 <center><img src="/images/layers.png" width="80%"></center>
-<br> It suggests that all of them are units of data, but lie in different <a href="https://www.wikiwand.com/en/OSI_model" target="_blank">layers</a>. What this essentially means is that on progressing down the layers, each unit of data is wrapped up with some additional information.<br>
+:point_right: [Reference](http://stackoverflow.com/a/31464376/5107319){:target="_blank"}
+
+It suggests that all of them are units of data, but are associated with different <a href="https://www.wikiwand.com/en/OSI_model" target="_blank">layers</a>. What this essentially means is that on progressing down the layers, each unit of data is wrapped up with some additional information.<br>
 
 * **Application layer:** For the first part, raw data enters through the application (say you send a message to someone via a messaging client using the socket API).
-* **Transport layer:** For the next part, TCP/UDP headers are associated with the data (yes, the same ones we saw previously).
-* **Internet layer:** Next IP headers are associated. IP headers contain information about IP version, source IP, destination IP, time-to-live (**ttl**) , etc.
-* **Link layer:** Finally, frame headers (source and destination MAC addresses) and footers (frame check sequence, **FCS** which is an extra error-detecting code) are associated (more on the specifics in future).
+* **Transport layer:** For the next part, TCP/UDP headers are associated with the data (yes, the same ones we saw previously) :arrow_right: **<u>Segment</u>**.
+* **Internet layer:** Next IP headers are associated. IP headers contain information about IP version, source IP, destination IP, time-to-live (**ttl**) , etc :arrow_right: **<u>Packet/Datagram</u>**.
+* **Link layer:** Finally, frame headers (source and destination MAC addresses) and footers (frame check sequence, **FCS** which is an extra error-detecting code) are associated (more on the specifics in future) :arrow_right: **<u>Frame</u>**.
 
 Interestingly, the above diagram itself is enough for clearly denoting the difference between **mss** and **mtu** (based on the layers with which they are associated with).
 

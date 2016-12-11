@@ -12,11 +12,11 @@ kill_all() {
   exit 0
 }
 
-bundle exec jekyll build --watch 1>/dev/null &
+bundle exec jekyll build --watch > /dev/null &
 job_pid[1]=$!
-bundle exec jekyll serve --incremental 1>/dev/null &
+bundle exec jekyll serve --incremental > /dev/null &
 job_pid[2]=$!
-sass --watch assets/_scss/main.scss:assets/css/main.css 1>/dev/null &
+sass --watch assets/_scss/main.scss:assets/css/main.css > /dev/null &
 job_pid[3]=$!
 
 echo "Starting build..."
