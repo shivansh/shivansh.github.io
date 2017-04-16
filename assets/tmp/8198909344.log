@@ -1,0 +1,305 @@
+2017-04-15 01:04:08	shivansh	hello sir, thank you for your response to my email the previous day. I had a few queries concerning the project, is it advisable for me to contact here or is email preferred by you?
+2017-04-15 01:04:35	bgamari	Hi, you can call me Ben :)
+2017-04-15 01:05:11	bgamari	if you have quick questions we can chat here
+2017-04-15 01:05:28	bgamari	for longer matters we should probably stay on email though
+2017-04-15 01:06:44	shivansh	cool, so there was a statement in the email which I am not able to figure out - "The history of a test's metrics are only preserved in comments in the .T file"
+2017-04-15 01:07:58	bgamari	right
+2017-04-15 01:08:29	bgamari	https://github.com/ghc/ghc/blob/master/testsuite/tests/perf/compiler/all.T#L32
+2017-04-15 01:08:33	bgamari	for instance, there
+2017-04-15 01:08:58	shivansh	oh, i see
+2017-04-15 01:09:40	shivansh	that's why it is difficult to analyze a test's behavior
+2017-04-15 01:09:51	bgamari	yep
+2017-04-15 01:53:27	--	irc: disconnected from server
+2017-04-16 23:20:07	shivansh	Hi Ben, you mentioned in your email about the infrastructure which will track performance metrics. Was work on this started previously ? I was thinking to start contributing right away
+2017-04-16 23:22:09	shivansh	I apologize for not asking this earlier as I had academic project deadlines, my academic workload keeps increasing as the semester nears its end :P
+2017-04-16 23:22:31	bgamari	Hi
+2017-04-16 23:22:50	bgamari	It depends upon what you mean by "the infrastructure"
+2017-04-16 23:23:09	bgamari	the work I describe in the HSoC proposal hasn't been started yet
+2017-04-16 23:23:37	bgamari	however, I think we should discuss details before you do start
+2017-04-16 23:24:01	bgamari	and also note that I'm not responsible for HSoC and therefore can't guarantee that you will get funding yet
+2017-04-16 23:24:12	bgamari	although I do appreciate the enthusiasm :)
+2017-04-16 23:24:32	shivansh	oh no problem, I am not at all concerned with the funding, learning is what matters the most to me :-)
+2017-04-16 23:25:02	shivansh	so what I'll do is that I will try to work out a workplan, and create a rough draft and will share with you
+2017-04-16 23:25:04	shivansh	will this work ?
+2017-04-16 23:25:32	bgamari	we aren't quite yet in the application period yet (it starts on the 25th) but I certainly encourage you to apply
+2017-04-16 23:25:49	shivansh	sure sure, I will
+2017-04-16 23:26:07	bgamari	perhaps we should have a chat about the specific requirements and some of the design considerations which I was considering
+2017-04-16 23:26:29	bgamari	I'm happy to chat about this today if you want
+2017-04-16 23:27:04	shivansh	cool, I'll give your email a thorough read once again, just give me 5 minutes
+2017-04-16 23:27:10	bgamari	sure
+2017-04-16 23:27:27	shivansh	thnx
+2017-04-16 23:34:50	shivansh	ok, I gave the email a read...so you suggested that eventually commits will contain performance metrics as metadata
+2017-04-16 23:35:08	shivansh	so suppose I am a developer, I make some changes
+2017-04-16 23:35:29	shivansh	I will run tests, and will attach the tuple (which you suggested) in the commit message
+2017-04-16 23:35:31	shivansh	is that right ?
+2017-04-16 23:35:48	bgamari	well, the commit message is a bit too immutable
+2017-04-16 23:35:53	shivansh	true
+2017-04-16 23:36:03	bgamari	e.g. we want CI to be able to attach its results as well
+2017-04-16 23:36:11	bgamari	there are two options here
+2017-04-16 23:36:22	bgamari	1) we keep the performance results in another repo
+2017-04-16 23:36:27	bgamari	2) we use `git notes`
+2017-04-16 23:36:34	bgamari	I'm rather fond of (2)
+2017-04-16 23:36:58	bgamari	although I haven't worked out the details of, e.g., how merges would work
+2017-04-16 23:37:19	bgamari	https://git-scm.com/docs/git-notes
+2017-04-16 23:37:27	shivansh	yes, I was just giving it a read :P 
+2017-04-16 23:37:39	shivansh	I've not used git-notes before, sorry
+2017-04-16 23:37:47	shivansh	just give me 2 minutes
+2017-04-16 23:38:21	bgamari	nor have I :)
+2017-04-16 23:38:26	bgamari	no worries
+2017-04-16 23:38:31	bgamari	take your time
+2017-04-16 23:39:33	shivansh	i see, so using git notes we can attach metadata to commits
+2017-04-16 23:39:38	shivansh	without affecting the commit 
+2017-04-16 23:39:44	bgamari	precisely
+2017-04-16 23:40:08	shivansh	and our purpose will also be satisfied here, we can change them at will
+2017-04-16 23:40:24	shivansh	do we also have version control for git notes ?
+2017-04-16 23:40:53	shivansh	like history of all the changes which were done in a note attached to a commit
+2017-04-16 23:41:31	shivansh	oh yes, git log -p notes/commits
+2017-04-16 23:41:35	shivansh	this is cool
+2017-04-16 23:41:56	bgamari	indeed, I think it's a rather nice solution
+2017-04-16 23:42:25	shivansh	so currently we track these metrics in the comments in .T files, right?
+2017-04-16 23:42:32	bgamari	moreover, it seems to support merge strategies which will work for our purposes 
+2017-04-16 23:42:39	bgamari	e.g. cat_sort_uniq
+2017-04-16 23:42:44	bgamari	shivansh yep
+2017-04-16 23:43:29	bgamari	but again, the history is essentially inaccessible to tools
+2017-04-16 23:44:11	bgamari	so note that GHC has two sources of performance tests
+2017-04-16 23:44:29	bgamari	we have our performance testcases in the testsuite
+2017-04-16 23:44:33	bgamari	and we also have nofib
+2017-04-16 23:44:45	bgamari	the former are generally smaller tests
+2017-04-16 23:44:51	bgamari	the latter are larger programs
+2017-04-16 23:44:59	bgamari	at the moment I am only considering the former
+2017-04-16 23:45:02	shivansh	i see
+2017-04-16 23:46:18	bgamari	another contributor, Joachim Breitner (nomeata on IRC) has done some great work putting together a collection of logs which contain results for both sets of testcases
+2017-04-16 23:46:28	shivansh	you mentioned that the note history is inaccessible to tools, it should be stored somewhere in the disk, right ? then why is it then inaccessible
+2017-04-16 23:46:31	shivansh	oh, i see
+2017-04-16 23:46:31	bgamari	this is https://perf.haskell.org/ghc/#
+2017-04-16 23:46:55	shivansh	having a look
+2017-04-16 23:47:49	bgamari	note that this doesn't bear directly on the problem we are discussion
+2017-04-16 23:48:10	bgamari	namely, that updating GHC's performance tests is unduly painful
+2017-04-16 23:49:43	bgamari	I just thought it would be useful to give you a holistic view of the tools we currently have 
+2017-04-16 23:49:50	shivansh	i see, just one thing, i lost connection few minutes back, can you plz paste your messages in between 23:46:55 and 23:49:43
+2017-04-16 23:49:59	bgamari	sure
+2017-04-16 23:50:23	bgamari	<shivansh> i see
+2017-04-16 23:50:23	bgamari	<bgamari> another contributor, Joachim Breitner (nomeata on IRC) has done some great work putting together a collection of logs which contain results for both sets of testcases
+2017-04-16 23:50:23	bgamari	<shivansh> you mentioned that the note history is inaccessible to tools, it should be stored somewhere in the disk, right ? then why is it then inaccessible
+2017-04-16 23:50:23	bgamari	<bgamari> this is https://perf.haskell.org/ghc/#
+2017-04-16 23:50:24	bgamari	<shivansh> oh, i see
+2017-04-16 23:50:26	bgamari	<shivansh> having a look
+2017-04-16 23:50:28	bgamari	<bgamari> note that this doesn't bear directly on the problem we are discussion
+2017-04-16 23:50:30	bgamari	<bgamari> namely, that updating GHC's performance tests is unduly painful
+2017-04-16 23:50:32	bgamari	<bgamari> I just thought it would be useful to give you a holistic view of the tools we currently have 
+2017-04-16 23:50:34	bgamari	<shivansh> i see, just one thing, i lost connection few minutes back, can you plz paste your messages in between 23:46:55 and 23:49:43
+2017-04-16 23:50:47	shivansh	cool
+2017-04-16 23:51:37	bgamari	in that vein, I also have a barely-usable hack which I threw together to look for longer-term trends in compiler performance
+2017-04-16 23:51:37	bgamari	http://home.smart-cactus.org/~ben/ghc-perf/
+2017-04-16 23:51:37	shivansh	so these logs are the ones generated from running the tests ?
+2017-04-16 23:51:44	bgamari	right
+2017-04-16 23:51:54	bgamari	the numbers are scraped out with regular expressions
+2017-04-16 23:52:29	bgamari	the logs from which they are extracted can be found here https://github.com/nomeata/ghc-speed-logs
+2017-04-16 23:52:52	shivansh	i see
+2017-04-16 23:53:43	shivansh	so my understanding of bytes allocated is that it is the measure of the memory allocated for running a specific test, is it correct ?
+2017-04-16 23:53:57	bgamari	right
+2017-04-16 23:54:04	shivansh	i see
+2017-04-16 23:54:13	bgamari	note that this isn't the same as the instantaneous heap size
+2017-04-16 23:54:37	bgamari	bytes allocated is essentially the sum of the sizes of all heap objects allocated over the lifetime of the program
+2017-04-16 23:55:05	shivansh	ok, program here being our test
+2017-04-16 23:55:06	bgamari	"max bytes used" is the maximum instantaneous heap size
+2017-04-16 23:55:36	bgamari	well, there are two classes of tests
+2017-04-16 23:55:44	bgamari	some test performance of the compiler itself
+2017-04-16 23:55:52	bgamari	those live in testsuite/tests/perf/compiler
+2017-04-16 23:56:02	bgamari	others test the performance of the code that the compiler generates
+2017-04-16 23:56:38	bgamari	these live in various places
+2017-04-16 23:57:03	shivansh	ok
+2017-04-16 23:57:08	bgamari	(the directory structure of the testsuite isn't terribly clean)
+2017-04-16 23:58:47	shivansh	so our motive is to maintain future logs like these in git notes, right ?
+2017-04-16 23:59:22	bgamari	right
+2017-04-16 23:59:37	bgamari	or rather, that is perhaps an eventual goal
+2017-04-16 23:59:42	shivansh	I am currently cloning git@github.com:nomeata/ghc-speed-logs.git, will try to have a look at one of the logs
+2017-04-16 23:59:51	bgamari	heh, oh dear
+2017-04-16 23:59:56	bgamari	that will take quite a while
+2017-04-17 00:00:03	bgamari	it's a rather large repository
+2017-04-17 00:00:11	bgamari	and frankly it isn't terribly interesting
+2017-04-17 00:00:11	shivansh	no, our campus has pretty fast internet :P 
+2017-04-17 00:00:15	bgamari	heh
+2017-04-17 00:00:47	bgamari	I can paste a single file if you'd like
+2017-04-17 00:00:53	bgamari	as a gist, for instance
+2017-04-17 00:00:54	shivansh	cool, that would work to
+2017-04-17 00:00:56	shivansh	*too
+2017-04-17 00:01:22	shivansh	I just wanted to see what these logs look like to get a rough idea
+2017-04-17 00:01:55	bgamari	https://gist.github.com/bgamari/7624453c4726da7f087fc8ace777f6ad
+2017-04-17 00:02:04	bgamari	(note that the text is in German)
+2017-04-17 00:02:38	bgamari	ahh, and github truncates it
+2017-04-17 00:02:40	bgamari	see https://gist.githubusercontent.com/bgamari/7624453c4726da7f087fc8ace777f6ad/raw/58387e528822043c5e66e572926e19cd210b93bc/gistfile1.txt
+2017-04-17 00:03:09	bgamari	if you scroll to the very bottom you will see some nofib results
+2017-04-17 00:04:02	bgamari	if you search for "=====> T4334" you will see a testsuite result
+2017-04-17 00:04:44	shivansh	doing it
+2017-04-17 00:05:31	shivansh	cool, i see it
+2017-04-17 00:06:05	shivansh	i now get why the size of all the logs combined is humungous
+2017-04-17 00:06:14	bgamari	so again, the work we are discussing will (at least at first) target the testsuite case
+2017-04-17 00:06:19	bgamari	right :)
+2017-04-17 00:06:35	bgamari	it's a pretty inefficient encoding for a few numbers :)
+2017-04-17 00:06:42	shivansh	true
+2017-04-17 00:07:04	bgamari	that being said, the fact that the logs are also available has been handy in the past
+2017-04-17 00:07:05	shivansh	so are these logs being generated automatically when a new commit is made ?
+2017-04-17 00:07:09	bgamari	yep
+2017-04-17 00:07:23	bgamari	nomeata has a machine which churns through them
+2017-04-17 00:07:39	bgamari	and pushes the results to this repo
+2017-04-17 00:07:40	shivansh	i see, now I understand why logs attached with each commit as a note will be so much helpful
+2017-04-17 00:07:48	bgamari	right
+2017-04-17 00:07:59	shivansh	it will reduce the human searching time for specific log by a lot
+2017-04-17 00:08:15	bgamari	well, rarely do people use these logs on their own
+2017-04-17 00:08:31	bgamari	my tool and nomeata tool make it pretty unnecessary
+2017-04-17 00:08:38	bgamari	they both grab numbers from these logs
+2017-04-17 00:08:42	shivansh	i see
+2017-04-17 00:08:48	shivansh	these tools are cool
+2017-04-17 00:09:08	bgamari	the real motivation here is to improve the behavior of the testsuite driver
+2017-04-17 00:09:19	bgamari	when a user runs `make test`
+2017-04-17 00:09:25	shivansh	testsuite driver is the one whihc runs the tests
+2017-04-17 00:09:29	bgamari	yes
+2017-04-17 00:09:32	bgamari	the testsuite driver will run all tests
+2017-04-17 00:09:41	bgamari	in the testsuite
+2017-04-17 00:09:42	bgamari	including the performance tests
+2017-04-17 00:09:44	shivansh	and will generate these logs
+2017-04-17 00:09:55	shivansh	or not ?
+2017-04-17 00:10:10	bgamari	well, it won't produce the log unless you pipe the output to a file
+2017-04-17 00:10:17	shivansh	I see
+2017-04-17 00:10:19	bgamari	but it will emit output like what you see in these logs
+2017-04-17 00:10:24	shivansh	oh, ok
+2017-04-17 00:10:38	bgamari	at the end of the run it will display a summary of the results
+2017-04-17 00:10:53	bgamari	which includes how many tests were run, how many passed, how many failed, etc.
+2017-04-17 00:11:10	bgamari	if you grep for SUMMARY in the log you will find it
+2017-04-17 00:11:39	bgamari	you will see that one of the sections of this summary is titled "Unexpected stat failures:"
+2017-04-17 00:12:01	shivansh	i see, so I am currently (still) looking at the example log file you shared and had a doubt, so the memory allocated pointed here denotes for example the total heap memory allocated by the compiler when (for example) a compiler test was run
+2017-04-17 00:12:13	bgamari	these tests in that section are performance tests whose metrics are outside of the accepted window specified in the .T file
+2017-04-17 00:12:53	shivansh	so why is it the case that these values vary too much
+2017-04-17 00:13:18	bgamari	possible; what "bytes allocated" means depends upon whether the test is a test of the compiler or of the generated code
+2017-04-17 00:13:27	bgamari	well, there are a few reasons
+2017-04-17 00:14:01	bgamari	for one, when people make changes to the compiler it is expected that performance characteristics change
+2017-04-17 00:14:44	shivansh	true
+2017-04-17 00:14:46	shivansh	i see
+2017-04-17 00:14:47	bgamari	when this happens currently either 1) the changes are small and none of the tests leave their acceptance windows
+2017-04-17 00:15:19	bgamari	2) the changes are small and some tests were already near the edge of their acceptance windows and are knocked outside by the change
+2017-04-17 00:15:53	bgamari	3) the changes are large and themselves knock some tests out of their acceptance windows
+2017-04-17 00:16:10	bgamari	in particular (2) is one of the principle motivations for this project
+2017-04-17 00:17:06	bgamari	since when you are submitting a patch and a performance testcase fails it's currently hard to know whether your patch is case (1) or (2)
+2017-04-17 00:17:09	bgamari	which is annoying
+2017-04-17 00:17:25	shivansh	so by knocked outside in (2) you mean the ones resulting in "unexpected stat failures"
+2017-04-17 00:17:34	bgamari	right
+2017-04-17 00:17:48	bgamari	both (2) and (3) will result in performance test failures
+2017-04-17 00:18:40	bgamari	in addition to changes in performance characteristics due to patches, there is also a bit of variability due to the test environment
+2017-04-17 00:19:00	bgamari	for instance, IO operations have slightly different allocation behavior on various operating systems
+2017-04-17 00:19:56	bgamari	also, for instance, if the testcase constructs a string representation of a filepath, the size of that string will depend upon where the test is run
+2017-04-17 00:20:30	bgamari	moreover, GHC heap object sizes are all multiples of the machine's word size
+2017-04-17 00:20:45	bgamari	so bytes allocated on a 64-bit machine will generally be twice that of a 32-bit machine
+2017-04-17 00:22:12	shivansh	i see, so it is important to also track the test environment to account for these differences
+2017-04-17 00:22:24	bgamari	yes
+2017-04-17 00:22:41	bgamari	there is no "one true value" for a given metric, unfortunately
+2017-04-17 00:23:42	bgamari	so ideally it would be easy for a contributor to run the testsuite to re-center the testsuite numbers for their local environment
+2017-04-17 00:23:53	shivansh	true
+2017-04-17 00:23:55	bgamari	and then run it again with their patch to see changes
+2017-04-17 00:24:03	bgamari	currently this is too hard to do
+2017-04-17 00:24:11	bgamari	which is another motivation for the project
+2017-04-17 00:24:30	shivansh	oh, so do we have to manually change the parameters in the testsuite when testing on a different platform ?
+2017-04-17 00:24:57	bgamari	pretty much
+2017-04-17 00:25:02	shivansh	like suppose a test was intended for a 64 bit machine and the user has a 32 bit machine
+2017-04-17 00:25:02	shivansh	i see
+2017-04-17 00:25:22	bgamari	we generally have two sets of numbers for each test
+2017-04-17 00:25:26	bgamari	(at least two)
+2017-04-17 00:25:32	bgamari	one for 64-bit, one for 32-bit
+2017-04-17 00:25:36	shivansh	oh, i see
+2017-04-17 00:25:44	bgamari	or alternatively, we don't even bother to specify the 32-bit case
+2017-04-17 00:25:52	bgamari	and only run the test on 64-bit
+2017-04-17 00:26:28	bgamari	moreover Windows, OS X, and Linux all differ significantly in some cases
+2017-04-17 00:26:42	bgamari	so sometimes we have different numbers for these cases as well
+2017-04-17 00:26:51	bgamari	but none of this is consistent
+2017-04-17 00:26:58	bgamari	often these numbers fall out of date
+2017-04-17 00:27:18	shivansh	so you said - "contributor to run the testsuite to re-center the testsuite numbers for their local environment", do we plan to add a feature for automatically re-centering the testsuite numbers in accordance with the user's platform ?
+2017-04-17 00:28:03	shivansh	like if our tool takes suppose a test and architecture details as inputs and then accordingly runs the tests
+2017-04-17 00:28:25	bgamari	we could do that
+2017-04-17 00:28:38	shivansh	so then we'll have to only maintain one version of a test, and our tool takes care of compatibility
+2017-04-17 00:29:03	bgamari	my original idea was to instead not even pretend that "compatibility" across machines exists
+2017-04-17 00:29:05	shivansh	I am not sure if this is correct/possible, just a guess
+2017-04-17 00:29:08	shivansh	i see
+2017-04-17 00:29:28	bgamari	instead just ask the user to `make test TEST_ENV=bgamari`
+2017-04-17 00:29:38	bgamari	before and after their change
+2017-04-17 00:30:13	bgamari	where "bgamari" is a somewhat unique test environment name
+2017-04-17 00:30:43	shivansh	i see, and the test which is currently present corresponding to that environment is run
+2017-04-17 00:30:46	bgamari	which would add the performance metrics somehow
+2017-04-17 00:31:05	bgamari	then provide a tool for the user to compare metrics across two commits for a particular environment
+2017-04-17 00:31:26	shivansh	oh, i get it now
+2017-04-17 00:31:37	bgamari	the only issue with this is that I don't think we would want users' results to get pushed
+2017-04-17 00:31:53	bgamari	so we'd have to work out what to do with that
+2017-04-17 00:32:11	shivansh	true, because then we'd have to maintain a lots of versions of test results corresponding to different architectures
+2017-04-17 00:33:20	bgamari	I think the only results we'd want to include in the repository would be those from our CI builders
+2017-04-17 00:33:25	bgamari	since these are stable
+2017-04-17 00:33:40	shivansh	yes, I was just typing my question for this :P 
+2017-04-17 00:33:42	shivansh	cool
+2017-04-17 00:34:02	shivansh	so we'll maintain test logs from CI builders
+2017-04-17 00:34:43	shivansh	I guess these central logs can be used for benchmarking too ?
+2017-04-17 00:38:51	shivansh	sorry, I again got disconnected after - 00:33:25  bgamari | since these are stable
+2017-04-17 00:38:56	shivansh	:-(
+2017-04-17 00:39:10	shivansh	00:33:40 shivansh | yes, I was just typing my question for this :P 
+2017-04-17 00:39:10	shivansh	00:33:42 shivansh | cool
+2017-04-17 00:39:10	shivansh	00:34:02 shivansh | so we'll maintain test logs from CI builders
+2017-04-17 00:39:10	shivansh	00:34:43 shivansh | I guess these central logs can be used for benchmarking too ?
+2017-04-17 00:39:14	bgamari	<bgamari> since these are stable
+2017-04-17 00:39:15	bgamari	<bgamari> hopefully
+2017-04-17 00:39:15	bgamari	<bgamari> but this is a detail
+2017-04-17 00:39:15	bgamari	<bgamari> I suspect a git push hook would do the trick here
+2017-04-17 00:39:16	bgamari	<bgamari> or something along those lines; I frankly don't know enough about git notes yet to know
+2017-04-17 00:39:17	bgamari	<bgamari> from reading the manpage, I suspect that notes aren't even pushed by default
+2017-04-17 00:39:17	bgamari	<bgamari> so we may be fine
+2017-04-17 00:40:03	shivansh	I see, so I'll also explore git notes thoroughly
+2017-04-17 00:40:09	bgamari	well, the idea is that we wouldn't need to take the performance numbers from the logs
+2017-04-17 00:40:19	bgamari	instead they can just come from the commit metadata
+2017-04-17 00:41:14	shivansh	true
+2017-04-17 00:43:01	shivansh	so one more thing, suppose the logs from CI builders are for 64 bit machine, and our user maintains a 32 bit machine, so then these 64 bit logs are of no use to him, so i guess we'll also have to figure out a way of maintaining these runtime logs locally too
+2017-04-17 00:43:26	shivansh	oh, wait..this is what you told at 00:39:16
+2017-04-17 00:43:29	shivansh	my bad
+2017-04-17 00:44:58	bgamari	we also have a 32-bit CI machine
+2017-04-17 00:45:08	shivansh	oh, i see
+2017-04-17 00:46:00	shivansh	cool, I now get the broader picture of what we aim to do
+2017-04-17 00:46:14	bgamari	so the user could use the metrics from CI if they wanted
+2017-04-17 00:46:39	bgamari	but I think it's generally better to recenter for your local environment if possible
+2017-04-17 00:46:43	bgamari	great
+2017-04-17 00:48:21	shivansh	so do you recommend next - 1) to draft our entire discussion nicely in a doc first, 2) or give a direct attempt at implementation
+2017-04-17 00:49:22	shivansh	I guess if I make a document of the entire workplan I might get to know if I understood anything wrong
+2017-04-17 00:49:53	bgamari	(1) would be great if you could
+2017-04-17 00:49:57	shivansh	cool cool
+2017-04-17 00:50:17	shivansh	I always make a rough draft of workplan even for my academic projects
+2017-04-17 00:50:29	bgamari	I think it would be helpful for an HSoC proposal as well, if you wanted to pursue that
+2017-04-17 00:50:35	shivansh	sure sure
+2017-04-17 00:50:43	bgamari	great
+2017-04-17 00:50:49	bgamari	thanks for your interest!
+2017-04-17 00:51:02	bgamari	our of curiosity, what brings you to Haskell?
+2017-04-17 00:51:14	shivansh	learn you a haskell 
+2017-04-17 00:51:23	bgamari	ahh yes
+2017-04-17 00:51:30	shivansh	I started it about a month back
+2017-04-17 00:51:30	bgamari	that's a good one
+2017-04-17 00:52:09	shivansh	so we have a group of hackers in our institute, we hang out a lot....all of them are my seniors, and all of them are super fluent in functional programming
+2017-04-17 00:52:37	shivansh	they say that functional programming has great expressive power
+2017-04-17 00:52:37	bgamari	it's great to have experienced FP'ers around
+2017-04-17 00:52:49	bgamari	it helps flatten the learning curve
+2017-04-17 00:52:51	shivansh	so I got curious, and started learning 
+2017-04-17 00:52:52	shivansh	true
+2017-04-17 00:53:34	shivansh	one of our professors is also said to be extremely awesome, he offered "priciples of programming languages" in the next semester, and I took it
+2017-04-17 00:53:55	bgamari	ahh
+2017-04-17 00:53:59	shivansh	so looking at my interest one of my seniors told me to have a look at HSoC
+2017-04-17 00:54:40	bgamari	ahh, I see
+2017-04-17 00:54:44	bgamari	well, I'm glad they did
+2017-04-17 00:54:51	shivansh	I am from non CSE branch (I am from mathematics and scientific computing) and I guess I am the one in my branch who takes the most interest in computer science :P 
+2017-04-17 00:55:19	shivansh	thanks :-)
+2017-04-17 00:55:26	bgamari	ahh, yes
+2017-04-17 00:55:36	bgamari	Haskell tends to attract a pretty wide range of backgrounds
+2017-04-17 00:55:41	bgamari	I'm from physics
+2017-04-17 00:56:04	shivansh	oh, cool, one of my friend is also from Physics ....Physics people are cool !!
+2017-04-17 00:56:24	shivansh	It is always interesting to have a chat with them and be amazed 
+2017-04-17 00:56:43	bgamari	heh
+2017-04-17 00:56:54	bgamari	alright, I'm afraid I need to run
+2017-04-17 00:57:00	bgamari	but thanks for the chat
+2017-04-17 00:57:03	shivansh	sure sure, nice talking to you
+2017-04-17 00:57:07	shivansh	thanks for the help
+2017-04-17 00:57:12	bgamari	I look forward to seeing your write-up
+2017-04-17 00:57:23	bgamari	let me know if you have any other questions
+2017-04-17 00:57:27	shivansh	sure sure, I will complete it as soon as possible and share it
+2017-04-17 00:57:28	shivansh	will do
+2017-04-17 01:21:41	--	irc: disconnected from server
