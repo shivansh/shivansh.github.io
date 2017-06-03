@@ -14,9 +14,18 @@ author_profile: true
 {% endfor %}
 <br>
 
-<h2 class="archive__subtitle"><a href="/gsoc/">GSoC updates</a></h2><br>
+<h2 class="archive__subtitle"><a href="/gsoc/">GSoC '17 updates</a></h2><br>
 
-{% for post in site.gsoc %}
+{% for post in site.gsoc17 %}
+<div class="archive_title">
+  {% include archive-single.html type="list" %}
+</div>
+{% endfor %}
+<br>
+
+<h2 class="archive__subtitle"><a href="/gsoc/">GSoC '16 updates</a></h2><br>
+
+{% for post in site.gsoc16 %}
 <div class="archive_title">
   {% include archive-single.html type="list" %}
 </div>

@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "Blog"
 title_separator          : "-"
 name                     : "Shivansh Rai"
 description              : "My personal blog"
@@ -91,7 +91,11 @@ author:
   youtube          :
 
 collections:
-  gsoc:
+  gsoc16:
+    output: true
+    permalink: /:collection/:path/
+
+  gsoc17:
     output: true
     permalink: /:collection/:path/
 
@@ -118,10 +122,20 @@ defaults:
       layout: single
       author_profile: true
 
-  # _gsoc
+  # _gsoc16
   - scope:
       path: ""
-      type: gsoc
+      type: gsoc16
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+
+  # _gsoc17
+  - scope:
+      path: ""
+      type: gsoc17
     values:
       layout: single
       author_profile: true

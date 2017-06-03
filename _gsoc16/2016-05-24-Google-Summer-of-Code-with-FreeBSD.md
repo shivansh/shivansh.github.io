@@ -1,5 +1,5 @@
 ---
-title: "Google Summer of Code with FreeBSD"
+title: "Google Summer of Code '16 with FreeBSD"
 layout: single
 ---
 

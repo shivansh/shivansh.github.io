@@ -4,7 +4,10 @@ main:
     url: /posts/
 
   - title: "GSoC-16"
-    url: /gsoc/
+    url: /gsoc16/
+
+  - title: "GSoC-17"
+    url: /gsoc17/
 
   - title: "About"
     url: /about.html
