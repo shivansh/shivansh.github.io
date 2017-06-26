@@ -13,11 +13,11 @@ cleanup() {
 }
 
 startBuild() {
-  bundle exec jekyll build --watch > /dev/null &
+  bundle exec jekyll build --watch &> /dev/null &
   job_pid[1]=$!
-  bundle exec jekyll serve --incremental > /dev/null &
+  bundle exec jekyll serve --incremental &> /dev/null &
   job_pid[2]=$!
-  sass --watch assets/_scss/main.scss:assets/css/main.css > /dev/null &
+  sass --watch assets/_scss/main.scss:assets/css/main.css &> /dev/null &
   job_pid[3]=$!
 }
 
