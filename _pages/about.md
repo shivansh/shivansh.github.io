@@ -15,7 +15,7 @@ I love pretty much anything related to a computer, well, specifically I am a sys
 
 On finding time apart from projects, wargames and CTFs, I usually hang out on IRC or read.
 
-As for my work and open source contributions, it's all in [Github](https://github.com/shivrai){:target="_blank"}.
+As for my work and open source contributions, it's all in [Github](https://github.com/shivansh){:target="_blank"}.
 
 I made this blog in a hope to share some of the interesting stuff which I come across, and also for some happy memories. &#x1F601;
 
