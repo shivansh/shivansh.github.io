@@ -14,9 +14,13 @@ int   i_cast = (int) pi;        // type casting
 int   i_ptr  = *(int *)&pi;     // pointer casting
 ```
 
-A union can also be used for the above problem.
+A union can also be used for the above problem
 
-After this, we started discussing interesting "hacks" that can be made use of in C. Here is one extremely cool problem which he recalled -
+|---|
+| **NOTE:** The above defined scenario of pointer casting might lead to undefined behavior and should be avoided unless one is pretty sure of what is to be achieved. |
+
+
+After this, we started discussing interesting hacks that can be made use of in C, and here is a cool one which he recalled -
 
 > Suppose you have a struct definition in C which contains an array member (let's say it is an array of ints). While declaring the struct, you don't know how many elements the array will contain and you also don't want to declare it with arbitrary number of elements. A known way for this case is using an integer pointer, and later using `malloc()` for space allocation. But now, I want to access this array like `my_struct->my_array[i]` (`my_struct` will be a pointer to the struct in discussion), and I cannot use an integer pointer. How to achieve this ?
 
@@ -32,7 +36,7 @@ The following C code demonstrates the above described procedure -
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct test_struct {
+typedef struct {
   // We don't know how many entries "arr" will contain at this
   // point, so declare it to (initially) contain zero elements.
   int arr[0];
