@@ -1,5 +1,5 @@
 ---
-title: "How interesting can C get ?"
+title: "How interesting can structs get ?"
 layout: single
 ---
 

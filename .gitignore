@@ -9,3 +9,5 @@ codekit-config.json
 node_modules
 npm-debug.log*
 misc.md
+.bundle
+.vendor

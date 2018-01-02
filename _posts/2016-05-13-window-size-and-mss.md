@@ -1,5 +1,5 @@
 ---
-title: "window size, mss, mtu...what's all the fuss about?"
+title: "Exploring window size, mss and mtu"
 layout: single
 ---
 
