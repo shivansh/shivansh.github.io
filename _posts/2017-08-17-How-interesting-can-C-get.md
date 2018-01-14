@@ -22,9 +22,10 @@ A union can also be used for the above problem
 
 After this, we started discussing interesting hacks that can be made use of in C, and here is a cool one which he recalled -
 
-> Suppose you have a struct definition in C which contains an array member (let's say it is an array of ints). While declaring the struct, you don't know how many elements the array will contain and you also don't want to declare it with arbitrary number of elements. A known way for this case is using an integer pointer, and later using `malloc()` for space allocation. But now, I want to access this array like `my_struct->my_array[i]` (`my_struct` will be a pointer to the struct in discussion), and I cannot use an integer pointer. How to achieve this ?
+> Suppose you have a struct definition in C which contains an array member (let's say it is an array of ints). While declaring the struct, you don't know how many elements the array will contain and you also don't want to declare it with an arbitrary number of elements. How to achieve this ?
 
-Suppose the number of elements I want in the array is stored in a variable of type int named `count`. An interesting method of approaching this problem is to take advantage of the memory representation of a struct.  
+The obvious way of achieving this is by using an integer pointer and later allocating memory dynamically. But there is an alternative approach to this problem by taking advantage of the memory representation of a struct.  
+Suppose the number of elements I want in the array is stored in a variable of type int named `count`.
 
 - We declare the array to initially contain zero elements in the struct definition.
 - Next, when we allocate space for the struct (via `malloc()`), we also allocate space for "count" number of integer elements following it. Thus, `malloc()` will return a pointer to a struct which essentially contains an array of "count" elements.
@@ -45,7 +46,7 @@ typedef struct {
 int main() {
   // The variable "count" contains the number of
   // entries that we desire in the array "arr".
-  int count = 4;        // an arbitrary value
+  int count = 4;  // an arbitrary value
   test_struct *str;
 
   // We take advantage of the memory representation of a struct in C.
