@@ -8,10 +8,10 @@ Basically, when you want to perform a type cast, say a float to an integer, it m
 
 The following code demonstrates pointer casting -
 
-```
+```c
 float pi     = M_PI;
-int   i_cast = (int) pi;        // type casting
-int   i_ptr  = *(int *)&pi;     // pointer casting
+int   i_cast = (int) pi;     // type casting
+int   i_ptr  = *(int *)&pi;  // pointer casting
 ```
 
 A union can also be used for the above problem
@@ -33,7 +33,7 @@ Suppose the number of elements I want in the array is stored in a variable of ty
 
 The following C code demonstrates the above described procedure -
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 

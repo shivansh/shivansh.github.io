@@ -8,8 +8,8 @@ I came across an interesting bug recently while writing tests for utilities in t
 I was trying to make a kyua based test for the '-F' option of ln(1). This was the command which I ran successfully -
 
 ```
-mkdir A B
-truss -o ln.log ln -sF A B    # '-f' is assumed to be present by default
+$ mkdir A B
+$ truss -o ln.log ln -sF A B  # '-f' is assumed to be present by default
 ```
 
 **<u>Actual results -</u>**  
