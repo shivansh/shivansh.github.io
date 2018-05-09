@@ -3,7 +3,7 @@ title: "Exploring window size, mss and mtu"
 layout: single
 ---
 
-So it has been some time since I started reading about TCP/IP and networks in detail, and there is one thing which confused me a lot initially - window size, transmission unit and segment size. When given a first read, they tend to seem nearly same, well not same but one might be tempted to think "Why was there even a need to define these separately?". <br>
+So it has been some time since I started reading about TCP/IP and networks in detail, and there is one thing which slightly confused me initially - window size, transmission unit and segment size. When given a first read, they tend to seem nearly same, well not same but one might be tempted to think "Why was there even a need to define these separately?". <br>
 So let's go through each of them, and then try to figure out where the difference lies.
 
 ## TCP windows

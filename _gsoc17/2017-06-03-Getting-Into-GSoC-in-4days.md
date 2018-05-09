@@ -31,7 +31,7 @@ This project aims to develop a new test infrastructure and automation tool along
 
 You can track the progress of the project on [Github](https://github.com/shivrai/smoketestsuite/) and the [FreeBSD wiki](https://wiki.freebsd.org/SummerOfCode2017/SmokeTestingOfBaseUtilities).
 
-Since I had no hope that my proposal for GSoC will be accepted, I also applied in [Haskell Summer of Code](https://summer.haskell.org/) and got in it as well :smile:. Had to back out of it since cannot "officially" participate in both HSoC and GSoC simultaneously.
+Since I had no hope that my proposal for GSoC will be accepted, I also applied in [Haskell Summer of Code](https://summer.haskell.org/) and [got in it as well](/images/hsoc17-acceptance.png) :smile:. Had to back out of it since cannot "officially" participate in both HSoC and GSoC simultaneously.
 
 In hindsight, a lesson for those willing to apply in GSoC in the future - it's always better to have a rough idea of 1 more project along with your main project so that if the same situation arises, it can be dealt smoothly.
 

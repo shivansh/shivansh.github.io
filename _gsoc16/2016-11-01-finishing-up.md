@@ -5,7 +5,7 @@ layout: single
 
 <br>
 GSoC is finally over, and to say the least it was an experience of a lifetime. I got an awesome review from my mentor, to whom I cannot be thankful enough for all the support.<br>
-<center><img src="/images/gsoc-final-evaluation.png"></center>
+<center><img src="/images/gsoc16-final-evaluation.png"></center>
 <br>
 This post summarizes all the work done in the entire duration of 4 months.
 
