@@ -195,7 +195,7 @@ body {
   margin: 0;
   padding: 0;
   color: #181a1b;
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   line-height: 1.5; }
   body.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -712,7 +712,7 @@ a.reversefootnote {
 table {
   margin-bottom: 1em;
   width: 100%;
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   font-size: 0.99em;
   border-collapse: collapse;
   border: 1px solid #bdc1c4; }
@@ -851,7 +851,7 @@ tr, td, th {
 .notice {
   margin: 2em 0 !important;
   padding: 1em;
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   font-size: 0.99em !important;
   text-indent: initial;
   background-color: #f8f9f9;
@@ -881,7 +881,7 @@ tr, td, th {
 .notice--primary {
   margin: 2em 0 !important;
   padding: 1em;
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   font-size: 0.99em !important;
   text-indent: initial;
   background-color: #f2f3f3;
@@ -911,7 +911,7 @@ tr, td, th {
 .notice--info {
   margin: 2em 0 !important;
   padding: 1em;
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   font-size: 0.99em !important;
   text-indent: initial;
   background-color: #ebf1f7;
@@ -941,7 +941,7 @@ tr, td, th {
 .notice--warning {
   margin: 2em 0 !important;
   padding: 1em;
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   font-size: 0.99em !important;
   text-indent: initial;
   background-color: #fef4e6;
@@ -971,7 +971,7 @@ tr, td, th {
 .notice--success {
   margin: 2em 0 !important;
   padding: 1em;
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   font-size: 0.99em !important;
   text-indent: initial;
   background-color: #eff9ef;
@@ -1001,7 +1001,7 @@ tr, td, th {
 .notice--danger {
   margin: 2em 0 !important;
   padding: 1em;
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   font-size: 0.99em !important;
   text-indent: initial;
   background-color: #fdefef;
@@ -1430,7 +1430,7 @@ tr, td, th {
       text-decoration: underline; }
 
 .page__footer-copyright {
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   font-size: 0.86em; }
   @media (min-width: 64em) {
     .page__footer-copyright {
@@ -2131,7 +2131,7 @@ select:focus {
     margin-top: -0.5em; }
 
 .page__lead {
-  font-family: Georgia, Times, serif;
+  font-family: "Actor", "sans-serif";
   font-size: 1.25em; }
 
 .page__content {
