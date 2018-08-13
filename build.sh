@@ -19,8 +19,10 @@ startBuild() {
   job_pid[1]=$!
   bundle exec jekyll serve --incremental &> /dev/null &
   job_pid[2]=$!
-  sass --watch assets/_scss/main.scss:assets/css/main.css &> /dev/null &
-  job_pid[3]=$!
+  # TODO: Error while installing ffi gem. For now, avoid using '--watch' flag.
+  # sass --watch assets/_scss/main.scss:assets/css/main.css &> /dev/null &
+  # job_pid[3]=$!
+  sleep $TIMEOUT
 }
 
 echo "Starting build..."
