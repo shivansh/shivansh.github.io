@@ -273,9 +273,6 @@ a:hover, a:active {
   outline: 0; }
 
 /* code */
-tt, code, kbd, samp, pre {
-  font-family: Monaco, Consolas, "Lucida Console", monospace; }
-
 pre {
   overflow-x: auto; }
 
@@ -284,10 +281,9 @@ a > code,
 li > code,
 figcaption > code,
 td > code {
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
-  font-size: 0.9em;
-  background: #fafafa;
+  font-size: 0.86em;
+  color: #ff006d;
+  background: #ffedf4;
   border: 1px solid #f2f3f3;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125); }
@@ -1464,8 +1460,7 @@ div.highlighter-rouge,
 figure.highlight {
   position: relative;
   margin-bottom: 1em;
-  font-family: Monaco, Consolas, "Lucida Console", monospace;
-  font-size: 0.9em;
+  font-size: 0.86em;
   line-height: 1.8;
   border: 1px solid #f2f3f3;
   border-radius: 4px;
@@ -2138,7 +2133,7 @@ select:focus {
   /* paragraph indents */
   /* blockquote citations */ }
   .page__content p, .page__content li, .page__content dl {
-    font-size: 0.9; }
+    font-size: 0.99em; }
   .page__content p {
     margin: 0 0 1.3em; }
   .page__content a {
