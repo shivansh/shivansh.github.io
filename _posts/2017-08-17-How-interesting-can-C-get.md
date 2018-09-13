@@ -9,9 +9,9 @@ Basically, when you want to perform a type cast, say a float to an integer, it m
 The following code demonstrates pointer casting -
 
 ```c
-float pi     = M_PI;
-int   i_cast = (int) pi;     // type casting
-int   i_ptr  = *(int *)&pi;  // pointer casting
+float pi = M_PI;
+int i_cast = (int)pi;     // type casting
+int i_ptr = *(int *)&pi;  // pointer casting
 ```
 
 A union can also be used for the above problem
@@ -28,7 +28,7 @@ The obvious way of achieving this is by using an integer pointer and later alloc
 Suppose the number of elements I want in the array is stored in a variable of type int named `count`.
 
 - We declare the array to initially contain zero elements in the struct definition.
-- Next, when we allocate space for the struct (via `malloc()`), we also allocate space for "count" number of integer elements following it. Thus, `malloc()` will return a pointer to a struct which essentially contains an array of "count" elements.
+- Next, when we allocate space for the struct (via `malloc(3)`), we also allocate space for "count" number of integer elements following it. Thus, `malloc(3)` will return a pointer to a struct which essentially contains an array of "count" elements.
 - Now we can use this array (which was initially declared with zero elements) as a usual "count" sized array.
 
 The following C code demonstrates the above described procedure -
@@ -38,31 +38,31 @@ The following C code demonstrates the above described procedure -
 #include <stdlib.h>
 
 typedef struct {
-  // We don't know how many entries "arr" will contain at this
-  // point, so declare it to (initially) contain zero elements.
+  // We don't know how many entries "arr" will contain at this point, so declare
+  // it to (initially) contain zero elements.
   int arr[0];
 } test_struct;
 
 int main() {
-  // The variable "count" contains the number of
-  // entries that we desire in the array "arr".
-  int count = 4;  // an arbitrary value
+  // `count` contains the number of entries that we desire in the array `arr`.
+  int count = 4;  // NOTE: 4 is chosen arbitrarily
   test_struct *str;
 
-  // We take advantage of the memory representation of a struct in C.
-  // After allocating space for "str", we also allocate space for "count"
-  // number of integers. This way, the pointer to test_struct returned
-  // by malloc() will now contain an array (of size 0), followed by space
-  // for "count" number of ints.
-  // Thus, "arr" will behave exactly as a "count" sized array.
-  str = (test_struct*) malloc(sizeof(test_struct) + count*sizeof(int));
+  // We take advantage of the memory representation of a struct in C. After
+  // allocating space for `str`, we also allocate space for `count` number of
+  // ints. This way, the pointer to `test_struct` returned by malloc(3) will now
+  // contain an array (of size 0), followed by space for `count` number of ints.
+  // Thus, `arr` will behave exactly as a `count` sized array.
+  str = (test_struct*) malloc(sizeof(test_struct) + count * sizeof(int));
 
-  // Test for validity: populate "arr" and print its contents.
-  for (int i = 0; i < count; i++)
+  // A simple test for validity: populate "arr" and print its contents.
+  for (int i = 0; i < count; i++) {
     str->arr[i] = i;
+  }
 
-  for (int i = 0; i < count; i++)
+  for (int i = 0; i < count; i++) {
     printf("%d\n", str->arr[i]);
+  }
 
   return 0;
 }
