@@ -15,18 +15,18 @@ a minor modification to the buffer size.
 
 ```c
 #define LEN 2
-#define TOTAL LEN * 8 * 1024  // page-aligned buffer
+#define BUFSIZE LEN * 8 * 1024  // page-aligned buffer
 
 int main() {
     char yes[LEN] = {'y', '\n'};
     int used = 0;
-    char *buf = malloc(TOTAL);
-    while (used < TOTAL) {
+    char *buf = malloc(BUFSIZE);
+    while (used < BUFSIZE) {
         memcpy(buf + used, yes, LEN);
         used += LEN;
     }
-    write(1, buf, TOTAL);
-    while (write(1, buf, TOTAL))
+    write(1, buf, BUFSIZE);
+    while (write(1, buf, BUFSIZE))
         ;
     return 1;  // control flow cannot reach here
 }
@@ -37,9 +37,9 @@ Page size: 4 KiB
 Kernel version: 4.15.0-30-generic x86_64 GNU/Linux
 
 The following observations were recorded for the write speeds of the above program
-based on different values of `TOTAL` -
+based on different values of `BUFSIZE` -
 
-| TOTAL (KiB) | Write speed (GiB/s) |
+| BUFSIZE (KiB) | Write speed (GiB/s) |
 |:-----------:|:-------------------:|
 |      4      |         3.68        |
 |      8      |         4.18        |
@@ -57,8 +57,8 @@ repeated the experiment multiple times and the same result is obtained.
 TODO: insert speed-time graph here.
 
 It should be noted that the parameter which affects the performance of the above
-program is `TOTAL`.  
-TODO: can we use a linear regression model to find an optimal value of `TOTAL`?
+program is `BUFSIZE`.  
+TODO: can we use a linear regression model to find an optimal value of `BUFSIZE`?
 It might seem like an overkill, but will be worth it! NOTE that there might be
 a deterministic approach to this as well.
 
