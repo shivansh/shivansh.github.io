@@ -62,7 +62,7 @@ google_ad_slot           :
 # Site Author
 author:
   name             : "Shivansh Rai"
-  avatar           : "profile.jpg"
+  avatar           : "profile.jpeg"
   bio              : " Programmer ; Systems & Networks enthusiast :computer: :coffee: :pizza: :sleeping: :repeat:"
   location         :
   email            : shivansh@freebsd.org
