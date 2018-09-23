@@ -32,7 +32,7 @@ int main() {
 }
 ```
 
-Before we talk stats, a few specs of my machine -  
+Before we talk stats, a few [specs](/assets/tmp/machine-specs.txt) of my machine -  
 Page size: 4 KiB  
 Kernel version: 4.15.0-30-generic x86_64 GNU/Linux
 
@@ -54,14 +54,11 @@ Wait, what? That doesn't seem right.
 But as it turns out, it is. I've
 repeated the experiment multiple times and the same result is obtained.
 
-TODO: insert speed-time graph here.
-
 It should be noted that the parameter which affects the performance of the above
 program is `BUFSIZE`.  
-TODO: can we use a linear regression model to find an optimal value of `BUFSIZE`?
-It might seem like an overkill, but will be worth it! NOTE that there might be
-a deterministic approach to this as well.
 
+|:---:|
+| Before moving ahead, a [mini refresher on aligned v/s misaligned memory accesses](https://en.wikipedia.org/wiki/Data_structure_alignment#Problems). |
 
 Let's see what is happening here at a finer granularity.  
 It appears that using a buffer size of 16 KiB leads to larger write speed than
@@ -76,10 +73,6 @@ guaranteed a page-aligned chunk. But if we don't, we get whatever address
 `malloc(3)` happens to have handy. The write speed saturates to around 4.9 GiB/s
 for buffer sizes greater than 16 KiB.
 
-TODO:
+NOTE: using `valloc(3)` should always return a page aligned memory address.
 
-* Using `valloc(3)` should always return a page aligned memory address.
-
-* https://stackoverflow.com/a/32139544/5107319
-
-
+Thanks for reading.

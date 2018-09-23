@@ -1,0 +1,6 @@
+Some relevant specs of shivansh's machine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kernel version: 4.15.0-30-generic x86_64 GNU/Linux
+gcc version: Ubuntu 7.3.0-16ubuntu3
+go version: go1.11rc2 linux/amd64
