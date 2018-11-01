@@ -101,7 +101,82 @@ Let's run the tests again -
 
 A reduction of `8.672` seconds - the gains are significant indeed!
 
+
+- - -
+
+Below are a few benchmarks generated via `perf(1)`. Note that branch misses are
+maximum in the first case and minimum in the last case.
+
+```
+
+Without sort and without loop switching 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ Performance counter stats for './coins':
+
+      15559.449556      task-clock (msec)         #    0.999 CPUs utilized
+               229      context-switches          #    0.015 K/sec
+                 6      cpu-migrations            #    0.000 K/sec
+            86,438      page-faults               #    0.006 M/sec
+    40,868,138,499      cycles                    #    2.627 GHz
+    90,146,840,053      instructions              #    2.21  insn per cycle
+    13,718,299,799      branches                  #  881.670 M/sec
+       121,424,551      branch-misses             #    0.89% of all branches
+
+      15.570897771 seconds time elapsed
+
+With sort and without loop switching
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ Performance counter stats for './coins':
+
+      15790.581172      task-clock (msec)         #    1.000 CPUs utilized
+               192      context-switches          #    0.012 K/sec
+                 5      cpu-migrations            #    0.000 K/sec
+            86,436      page-faults               #    0.005 M/sec
+    41,377,099,491      cycles                    #    2.620 GHz
+    90,145,379,523      instructions              #    2.18  insn per cycle
+    13,719,167,993      branches                  #  868.820 M/sec
+       124,073,050      branch-misses             #    0.90% of all branches
+
+      15.796056471 seconds time elapsed
+
+Without sort and with loop switching
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ Performance counter stats for './coins':
+
+       7240.322581      task-clock (msec)         #    0.999 CPUs utilized
+               132      context-switches          #    0.018 K/sec
+                 2      cpu-migrations            #    0.000 K/sec
+            86,437      page-faults               #    0.012 M/sec
+    18,930,247,315      cycles                    #    2.615 GHz
+    48,527,363,072      instructions              #    2.56  insn per cycle
+     6,937,998,117      branches                  #  958.244 M/sec
+         7,821,022      branch-misses             #    0.11% of all branches
+
+       7.249432807 seconds time elapsed
+
+With sort and with loop switching
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ Performance counter stats for './coins':
+
+       6775.111452      task-clock (msec)         #    0.999 CPUs utilized
+               106      context-switches          #    0.016 K/sec
+                 4      cpu-migrations            #    0.001 K/sec
+            86,439      page-faults               #    0.013 M/sec
+    17,840,286,625      cycles                    #    2.633 GHz
+    48,648,004,601      instructions              #    2.73  insn per cycle
+     7,057,327,634      branches                  # 1041.655 M/sec
+           255,889      branch-misses             #    0.00% of all branches
+
+       6.779488807 seconds time elapsed
+
+```
+
 NOTE: there might be other factors at play apart from the one mentioned. Do let
 me know in case you find something missing!
 
 Thanks for reading.
+
