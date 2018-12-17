@@ -32,9 +32,10 @@ int main() {
 }
 ```
 
-Before we talk stats, a few [specs](/assets/tmp/machine-specs.txt) of my machine -  
-Page size: 4 KiB  
-Kernel version: 4.15.0-30-generic x86_64 GNU/Linux
+Before we talk stats, a few specs of my machine at the time of testing -
+
+* Page size: 4 KiB
+* Kernel version: 4.15.0-30-generic x86_64 GNU/Linux
 
 The following observations were recorded for the write speeds of the above program
 based on different values of `BUFSIZE` -

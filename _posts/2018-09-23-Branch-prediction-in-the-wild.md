@@ -36,20 +36,21 @@ available which explain the above algorithm, however I won't go into those
 details here. What I want to explore is whether it is possible to make this
 program run faster without making any semantic changes to the algorithm.
 
-Let's collect some data on the speed of the current program. The following
-input was used as test data on my machine ([specs](/assets/tmp/machine-specs.txt)) -
+All tests were done on my machine which had the following specs at the time of testing -
 
-```
-coins:  {3, 7, 405, 436, 4, 23}
-amount: 88392175
-```
+* Kernel version: 4.15.0-30-generic x86_64 GNU/Linux
+* gcc version: Ubuntu 7.3.0-16ubuntu3
+
+Let's collect some data on the speed of the current program. The following
+input was used as test data -
+
+    coins:  {3, 7, 405, 436, 4, 23}
+    amount: 88392175
 
 The program was compiled with the default optimization flag (`-O0`) using `g++`.
 The running time recorded on the above input was -
 
-```
-14.83s user 0.13s system 99% cpu 14.961 total
-```
+    14.83s user 0.13s system 99% cpu 14.961 total
 
 As is obvious from the title of this post, we can probably make use of branch
 prediction to squeeze out a few milliseconds. The first step in that direction
@@ -65,9 +66,7 @@ is asymptotically smaller than our current algorithm's time complexity.~~
 On making the relevant changes and running the tests, the following result is
 recorded -
 
-```
-15.42s user 0.11s system 99% cpu 15.525 total
-```
+    15.42s user 0.11s system 99% cpu 15.525 total
 
 Well, that didn't work out as we expected! In fact, the program is now slower
 than before. (_need to inspect this more_)
@@ -95,24 +94,18 @@ frequently than before.
 
 Let's run the tests again -
 
-```
-6.66s user 0.11s system 98% cpu 6.853 total
-```
+    6.66s user 0.11s system 98% cpu 6.853 total
 
 A reduction of `8.672` seconds - the gains are significant indeed!
 
-
 - - -
+
+## Benchmarks
 
 Below are a few benchmarks generated via `perf(1)`. Note that branch misses are
 maximum in the first case and minimum in the last case.
 
-```
-
-Without sort and without loop switching 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- Performance counter stats for './coins':
+### Without sort and without loop switching
 
       15559.449556      task-clock (msec)         #    0.999 CPUs utilized
                229      context-switches          #    0.015 K/sec
@@ -125,10 +118,7 @@ Without sort and without loop switching
 
       15.570897771 seconds time elapsed
 
-With sort and without loop switching
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- Performance counter stats for './coins':
+### With sort and without loop switching
 
       15790.581172      task-clock (msec)         #    1.000 CPUs utilized
                192      context-switches          #    0.012 K/sec
@@ -141,10 +131,7 @@ With sort and without loop switching
 
       15.796056471 seconds time elapsed
 
-Without sort and with loop switching
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- Performance counter stats for './coins':
+### Without sort and with loop switching
 
        7240.322581      task-clock (msec)         #    0.999 CPUs utilized
                132      context-switches          #    0.018 K/sec
@@ -157,10 +144,7 @@ Without sort and with loop switching
 
        7.249432807 seconds time elapsed
 
-With sort and with loop switching
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- Performance counter stats for './coins':
+### With sort and with loop switching
 
        6775.111452      task-clock (msec)         #    0.999 CPUs utilized
                106      context-switches          #    0.016 K/sec
@@ -173,9 +157,8 @@ With sort and with loop switching
 
        6.779488807 seconds time elapsed
 
-```
 
-NOTE: there might be other factors at play apart from the one mentioned. Do let
+**NOTE:** there might be other factors at play apart from the one mentioned. Do let
 me know in case you find something missing!
 
 Thanks for reading.
