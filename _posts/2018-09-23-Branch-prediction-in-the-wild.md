@@ -11,15 +11,16 @@ answer I read on stackoverflow a long time back -
 | [Why is it faster to process a sorted array than an unsorted array?](https://stackoverflow.com/a/11227902/5107319) |
 
 
-The source code (in C++) of the solution goes as follows -
+The source code (in C++) of the solution to the coin change problem goes as
+follows -
 
 ```c++
-int coinChange(vector<int>& coins, int amount) {
+int coinChange(const vector<int>& coins, int amount) {
     // dp[i] tracks the min. number of coins required to create denomination i.
     vector<int> dp(amount + 1, amount + 1);
     dp[0] = 0;  // no coins are required to create a nil denomination
     for (int i = 1; i <= amount; ++i) {
-        for (const auto& c : coins) {
+        for (auto& c : coins) {
             if (c <= i) {
                 dp[i] = min(dp[i], 1 + dp[i - c]);
             }
@@ -36,7 +37,8 @@ available which explain the above algorithm, however I won't go into those
 details here. What I want to explore is whether it is possible to make this
 program run faster without making any semantic changes to the algorithm.
 
-All tests were done on my machine which had the following specs at the time of testing -
+All tests were done on my machine which had the following specs at the time of
+testing -
 
 * Kernel version: 4.15.0-30-generic x86_64 GNU/Linux
 * gcc version: Ubuntu 7.3.0-16ubuntu3
@@ -75,7 +77,8 @@ One possible reason behind this is that even though the `coins` vector is sorted
 the processor is still switching branches quite frequently. To be more precise,
 we make a single pass through the `coins` vector in each iteration of the outer
 for-loop, and the distance between consecutive inflection points is `coins.size()`
-on average. All we need to do now is to make these inflection points lie farther apart.
+on average. All we need to do now is to make these inflection points lie farther
+apart.
 
 One solution is to switch the inner and outer for-loops. This won't have any
 effect on the semantics of the program, but now the inflection points will be
@@ -86,8 +89,8 @@ frequently than before.
 ```diff
      sort(coins.begin(), coins.end());
 -    for (int i = 1; i <= amount; ++i) {
--        for (const auto& c : coins) {
-+    for (const auto& c : coins) {
+-        for (auto& c : coins) {
++    for (auto& c : coins) {
 +        for (int i = 1; i <= amount; ++i) {
              if (c <= i) {
 ```
@@ -162,4 +165,3 @@ maximum in the first case and minimum in the last case.
 me know in case you find something missing!
 
 Thanks for reading.
-
