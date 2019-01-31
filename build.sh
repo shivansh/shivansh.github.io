@@ -3,7 +3,7 @@
 
 set -eu
 
-TIMEOUT=2
+TIMEOUT=4
 trap cleanup SIGINT SIGTERM SIGHUP
 
 cleanup() {
