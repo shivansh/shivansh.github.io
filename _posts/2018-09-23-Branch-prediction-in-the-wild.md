@@ -49,6 +49,9 @@ input was used as test data -
     coins:  {3, 7, 405, 436, 4, 23}
     amount: 88392175
 
+**Note** that in this specific example, `amount` is significantly larger than
+`coins.size()`.
+
 The program was compiled with the default optimization flag (`-O0`) using `g++`.
 The running time recorded on the above input was -
 
@@ -73,18 +76,18 @@ recorded -
 Well, that didn't work out as we expected! In fact, the program is now slower
 than before. (_need to inspect this more_)
 
-One possible reason behind this is that even though the `coins` vector is sorted,
-the processor is still switching branches quite frequently. To be more precise,
-we make a single pass through the `coins` vector in each iteration of the outer
-for-loop, and the distance between consecutive inflection points is `coins.size()`
-on average. All we need to do now is to make these inflection points lie farther
-apart.
+One possible reason behind this is that even though the `coins` vector is
+sorted, the processor is still switching branches quite frequently. To be more
+precise, we make a single pass through the `coins` vector in each iteration of
+the outer for-loop, and the distance between consecutive iterations where
+branch switch occurs (due to the if-statement) is `coins.size()` on average.
+All we need to do now is to make these switches lie farther apart.
 
-One solution is to switch the inner and outer for-loops. This won't have any
-effect on the semantics of the program, but now the inflection points will be
+One solution is to exchange the inner and outer for-loops. This won't have any
+effect on the semantics of the program, but now the branch switches will be
 `amount` distance apart on average. `amount` is significantly larger than
-`coins.size()`, and now the processor will be switching branches a lot less
-frequently than before.
+`coins.size()` (for this example), and now the processor will be switching
+branches a lot less frequently than before.
 
 ```diff
      sort(coins.begin(), coins.end());
@@ -108,7 +111,7 @@ A reduction of `8.672` seconds - the gains are significant indeed!
 Below are a few benchmarks generated via `perf(1)`. Note that branch misses are
 maximum in the first case and minimum in the last case.
 
-### Without sort and without loop switching
+### Without sort and without loop exchange
 
       15559.449556      task-clock (msec)         #    0.999 CPUs utilized
                229      context-switches          #    0.015 K/sec
@@ -121,7 +124,7 @@ maximum in the first case and minimum in the last case.
 
       15.570897771 seconds time elapsed
 
-### With sort and without loop switching
+### With sort and without loop exchange
 
       15790.581172      task-clock (msec)         #    1.000 CPUs utilized
                192      context-switches          #    0.012 K/sec
@@ -134,7 +137,7 @@ maximum in the first case and minimum in the last case.
 
       15.796056471 seconds time elapsed
 
-### Without sort and with loop switching
+### Without sort and with loop exchange
 
        7240.322581      task-clock (msec)         #    0.999 CPUs utilized
                132      context-switches          #    0.018 K/sec
@@ -147,7 +150,7 @@ maximum in the first case and minimum in the last case.
 
        7.249432807 seconds time elapsed
 
-### With sort and with loop switching
+### With sort and with loop exchange
 
        6775.111452      task-clock (msec)         #    0.999 CPUs utilized
                106      context-switches          #    0.016 K/sec
