@@ -70,13 +70,13 @@ seconds.  The script used to generate the plots is available
 
 Let's study the single client case first.
 
-### Single client (multithreaded-model)
+### Single client (multi-threaded model)
 
 <p align="center">
   <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/single-client-plots/thread-plot.png">
 </p>
 
-### Single client (multiprocess-model)
+### Single client (multi-process model)
 
 <p align="center">
   <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/single-client-plots/rabbit-plot.png">
@@ -87,16 +87,16 @@ of CPU utilization and also stabilizes at a lower memory footprint.
 
 Let's see the plots for a multi-client setup with 5 clients.
 
-### 5 clients (multithreaded-model)
+### 5 clients (multi-threaded model)
 
 <p align="center">
-  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/multi-client-plots/thread-plot.png">
+  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/5-client-plots/thread-plot.png">
 </p>
 
-### 5 clients (multiprocess-model)
+### 5 clients (multi-process model)
 
 <p align="center">
-  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/multi-client-plots/rabbit-plot.png">
+  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/5-client-plots/rabbit-plot.png">
 </p>
 
 The observation here is the same as the previous case.
@@ -112,3 +112,39 @@ It should be noted that the measurements corresponding to rabbitmq might not be
 [precise](https://github.com/shivansh/parallel-video-streaming/blob/master/benchmarks/plot.sh#L33).
 I'll make the relevant updates in case I find a better approach to get accurate
 metrics for rabbitmq.
+
+- - -
+
+**Update:** I experimented a bit more with an increased number of clients. For
+the case with 20 clients, the benchmarks are available
+[here](https://github.com/shivansh/parallel-video-streaming/tree/master/benchmarks/20-client-plots).
+The performance of both the models, in this case, is terrible (lagging and
+unsynchronised video) and hence I'm not sharing them here.
+
+The compelling case is the one with 10 clients. The performance of both models
+is comparable to the single client case, but resource utilization is quite
+interesting.
+
+To make more sense of the data, this time I recorded the observations for twice
+as long as before (40 seconds).
+
+### 10 clients (multi-threaded model)
+
+<p align="center">
+  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/10-client-plots/thread-plot.png">
+</p>
+
+### 10 clients (multi-process model)
+
+<p align="center">
+  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/10-client-plots/rabbit-plot.png">
+</p>
+
+A few observations -
+
+- The multi-threaded model still has better performance. The video quality is
+  also comparable, however I'd say the video was more synchronised across
+  clients in the case of multi-process model.
+- The memory usage of the multi-process model is no longer constant.
+- The CPU utilization in both cases experiences a sudden drop periodically. I'm
+  not yet sure what might be the cause (**todo**).
