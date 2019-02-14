@@ -63,7 +63,52 @@ straightforward. The implementation is available
 [here](https://github.com/shivansh/parallel-video-streaming).
 
 ## Benchmarks
-I am yet to workout a proper setup required to benchmark both the models
-outlined above (generating metrics for a multi-process model _might_ not be
-straightforward). This segment of the blog will be updated as soon as I find
-some time.
+
+Below are the graphs plotted against data generated for a duration of 20
+seconds.  The script used to generate the plots is available
+[here](https://github.com/shivansh/parallel-video-streaming/blob/master/benchmarks/plot.sh).
+
+Let's study the single client case first.
+
+### Single client (multithreaded-model)
+
+<p align="center">
+  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/single-client-plots/thread-plot.png">
+</p>
+
+### Single client (multiprocess-model)
+
+<p align="center">
+  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/single-client-plots/rabbit-plot.png">
+</p>
+
+It is apparent from the plots that the multi-threaded model is better in terms
+of CPU utilization and also stabilizes at a lower memory footprint.
+
+Let's see the plots for a multi-client setup with 5 clients.
+
+### 5 clients (multithreaded-model)
+
+<p align="center">
+  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/multi-client-plots/thread-plot.png">
+</p>
+
+### 5 clients (multiprocess-model)
+
+<p align="center">
+  <img height="400px" width="500px" src="https://raw.githubusercontent.com/shivansh/parallel-video-streaming/master/benchmarks/multi-client-plots/rabbit-plot.png">
+</p>
+
+The observation here is the same as the previous case.
+
+## Conclusion
+The lower memory footprint of the thread based model was no surprise to me,
+although I didn’t expect it to have better CPU utilization than the message
+passing model. I’m still skeptical whether it will have the upper hand for an
+even more significant number of clients, and will continue experimenting in
+case I find something interesting to share.
+
+It should be noted that the measurements corresponding to rabbitmq might not be
+[precise](https://github.com/shivansh/parallel-video-streaming/blob/master/benchmarks/plot.sh#L33).
+I'll make the relevant updates in case I find a better approach to get accurate
+metrics for rabbitmq.
