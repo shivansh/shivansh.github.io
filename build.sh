@@ -11,7 +11,7 @@ cleanup() {
   for pid in "${job_pid[@]}"; do
     kill "$pid"
   done
-  exit $1
+  exit "$1"
 }
 
 startBuild() {
