@@ -13,10 +13,10 @@ parallel](https://stackoverflow.com/a/1050257/5107319).
 I was initially of the thought that the thread-based design which I had come up
 with was parallel. However, there was one thing which I didn't take into
 account - [**GIL**](https://wiki.python.org/moin/GlobalInterpreterLock). I find
-it weird that I didn't pay attention to this while I was thinking about the
-design back then, as I'm pretty sure I was aware of the GIL at the time. Maybe
-the pressure of multiple deadlines during that particularly heavy semester made
-me skip this one fine detail (petty excuses).
+it weird that I didn't pay attention to this while thinking about the design
+back then, as I'm pretty sure of being aware of the GIL at the time. Maybe the
+pressure of multiple deadlines during that particularly heavy semester made me
+skip this one fine detail (petty excuses).
 
 ## A brief background
 During the first week of Jan '19, I was working on a specific task (cannot
@@ -83,7 +83,9 @@ Let's study the single client case first.
 </p>
 
 It is apparent from the plots that the multi-threaded model is better in terms
-of CPU utilization and also stabilizes at a lower memory footprint.
+of CPU utilization and also stabilizes at a lower memory footprint. The memory
+utilization is perfectly constant for both the models, which was a bit
+unexpected to me.
 
 Let's see the plots for a multi-client setup with 5 clients.
 
