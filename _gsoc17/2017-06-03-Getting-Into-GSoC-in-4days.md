@@ -29,7 +29,7 @@ This is the abstract for my project -
 FreeBSD currently has a set of tests under `src/tests` which are run using the `kyua` framework. These tests need to be first installed individually before they can be used for testing. This proves problematic in cases when direct testing of some newly installed or updated utility/library has to be performed. It makes testing changes to libraries and utilities difficult as one would like to perform tests (e.g. to ensure a proper build environment) before proceeding for installation.  
 This project aims to develop a new test infrastructure and automation tool along with basic tests to verify if all the base utilities in FreeBSD are linked properly. The testing framework will ease the process of writing test cases which will be run in a completely automated and developer friendly manner without need for any prior installation. Once integrated, the tool will also facilitate further development of tests.
 
-You can track the progress of the project on [Github](https://github.com/shivrai/smoketestsuite/) and the [FreeBSD wiki](https://wiki.freebsd.org/SummerOfCode2017/SmokeTestingOfBaseUtilities).
+You can track the progress of the project on [Github](https://github.com/shivrai/smoketestsuite/) and the [FreeBSD wiki](https://wiki.freebsd.org/SummerOfCode2017/SmokeTestingOfBaseUtilities). The project proposal is available [here](/assets/tmp/GSoC17ProjectProposal.pdf).
 
 Since I had no hope that my proposal for GSoC will be accepted, I also applied in [Haskell Summer of Code](https://summer.haskell.org/) and [got in it as well](/images/hsoc17-acceptance.png) :smile:. Had to back out of it since cannot "officially" participate in both HSoC and GSoC simultaneously.
 
