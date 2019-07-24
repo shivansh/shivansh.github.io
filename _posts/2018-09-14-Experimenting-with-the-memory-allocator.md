@@ -51,9 +51,7 @@ Write speed of `yes(1)` on my machine - 4.17 GiB/s
 
 The speed of the program I have written seems to be **0.75 GiB/s more** than that of
 GNU `yes(1)`.  
-Wait, what? That doesn't seem right.  
-But as it turns out, it is. I've
-repeated the experiment multiple times and the same result is obtained.
+I've repeated the experiment multiple times with the same results.
 
 It should be noted that the parameter which affects the performance of the above
 program is `BUFSIZE`.  
