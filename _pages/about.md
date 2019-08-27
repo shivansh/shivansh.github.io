@@ -13,7 +13,7 @@ By way of introduction, I am Shivansh Rai. I'm currently a software developer
 working on the [SAP Cloud Platform](https://cloudplatform.sap.com/index.html).
 In a previous life, I was an undergrad at [Indian Institute of Technology
 Kanpur](http://www.iitk.ac.in/) where I majored in Mathematics and Scientific
-Computing and did a minor in Computer Systems.
+Computing and minored in Computer Systems.
 
 I love pretty much anything related to a computer! Well, specifically I am a systems and networks enthusiast. Till now I have had my interests in operating systems, compiler design(current favorite), networks and security, algorithms, formal verification techniques, web development technologies and most of all - exploring ~~Linux~~ Linux and Unix. I am yet to complete my [10,000 hours](https://en.wikipedia.org/wiki/Outliers_(book)){:target="_blank"} to perfection, in the hope that I don't get distracted in between (has been working out fine until now!). I started working on a Linux based OS on my machine when mistakenly I had my Windows partition corrupted while playing around. I was initially skeptical about making this transition as I had this thought that it wasn't possible to do as much stuff with a shell as compared to a GUI (hah!). Eventually, after working for some time (more than four years now), I realized that I am happier than ever and exploring my system was never this much fun. One of my favorite pass time since then has been discovering new stuff related to Linux/Unix (mostly the underlying lower layers), and open source of course which exposed me to a lot of new fields (and still exploring...).
 
