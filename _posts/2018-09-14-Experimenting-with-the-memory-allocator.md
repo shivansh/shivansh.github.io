@@ -25,7 +25,6 @@ int main() {
         memcpy(buf + used, yes, LEN);
         used += LEN;
     }
-    write(1, buf, BUFSIZE);
     while (write(1, buf, BUFSIZE))
         ;
     return 1;  // control flow cannot reach here
