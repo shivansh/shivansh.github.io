@@ -18,7 +18,7 @@ Computing and minored in Computer Systems.
 I love pretty much anything related to a computer! Well, specifically I am a systems and networks enthusiast with a recently developed interest in Machine Learning. I am yet to complete my [10,000 hours](https://en.wikipedia.org/wiki/Outliers_(book)){:target="_blank"} to perfection, in the hope that I don't get distracted in between. I started working on a Linux based OS on my machine when mistakenly I had my Windows partition corrupted while playing around. I was initially skeptical about making this transition as I had this thought that it wasn't possible to do as much stuff with a shell as compared to a GUI (hah!). Eventually, after working for some time, I realized that I am happier than ever and exploring my system was never this much fun. One of my favorite pass time since then has been discovering new stuff related to Linux/Unix - mostly the underlying lower layers, and open source of course which exposed me to a lot of new fields (and am still exploring...).
 
 When I'm not staring at my laptop screen, I usually
-[read](https://www.goodreads.com/shivanshrai) (mostly fiction lately).  As for
+read.  As for
 my work and open source contributions, it's all in
 [Github](https://github.com/shivansh){:target="_blank"}.
 
