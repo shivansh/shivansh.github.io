@@ -63,7 +63,7 @@ google_ad_slot           :
 author:
   name             : "Shivansh Rai"
   avatar           : "profile.jpeg"
-  bio              : " Programmer ; Systems & Networks enthusiast :computer: :coffee: :pizza: :sleeping: :repeat:"
+  bio              : " Programmer :computer: :coffee: :sleeping: :repeat:"
   location         :
   email            : shivansh@freebsd.org
   uri              :
@@ -202,8 +202,8 @@ kramdown:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 50 # amount of posts to show
-paginate_path: /page:num/
+# paginate: 2 # amount of posts to show
+# paginate_path: /page:num/
 timezone: IN
 
 
@@ -233,23 +233,23 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
-categories:
-  type: liquid
+category_archive:
+  type: jekyll-archives
   path: /categories/
-tags:
-  type: liquid
+tag_archive:
+  type: jekyll-archives
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 
 
 # HTML Compression
