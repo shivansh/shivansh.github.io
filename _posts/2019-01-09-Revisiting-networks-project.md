@@ -19,12 +19,11 @@ pressure of multiple deadlines during that particularly heavy semester made me
 skip this one fine detail (petty excuses).
 
 ## A brief background
-During the first week of Jan '19, I was working on a specific task (cannot
-share details here) where DB writes were causing latency in the main thread and
-had to be separated. The solution to this was fairly simple - create a separate
-process for performing the writes, and use a shared message queue for
-communicating the relevant parameters. It is a single-writer single-reader
-problem, and Python's
+During the first week of Jan '19, I was working on a specific task where DB
+writes were causing latency in the main thread and had to be separated. The
+solution to this was fairly simple - create a separate process for performing
+the writes, and use a shared message queue for communicating the relevant
+parameters. It is a single-writer single-reader problem, and Python's
 [multiprocessing](https://docs.python.org/2/library/multiprocessing.html)
 seemed like an appropriate choice.
 
