@@ -5,14 +5,14 @@ sitemap: false
 permalink: /about
 ---
 
-Howdy!<br>
-By way of introduction, I am Shivansh Rai. I'm currently working on the [SAP Cloud Platform](https://cloudplatform.sap.com/index.html). In a previous life, I was an undergrad at [Indian Institute of Technology Kanpur](http://www.iitk.ac.in/) where I majored in Mathematics and Scientific Computing and minored in Computer Systems.
+Hello!<br>
+By way of introduction, I am Shivansh Rai. I'm currently a Member of Technical Staff at [Devrev](http://devrev.ai). In a previous life, I was an undergrad at [Indian Institute of Technology Kanpur](http://www.iitk.ac.in/) where I majored in Mathematics and Scientific Computing and minored in Computer Systems.
 
 I am a computer programmer, and I believe that programs and algorithms can be beautiful. I am yet to complete my [10,000 hours](https://en.wikipedia.org/wiki/Outliers_(book)){:target="_blank"} to perfection, hoping I don't get distracted en route.
 
-I started working on a Linux based OS back in 2015 when mistakenly I had my Windows partition corrupted while playing around. I was initially skeptical about this transition since I thought absence of a GUI might be limiting. Eventually after working for some time, I realized that I enjoyed finding new things about my system while trying to make things work. This, marked the beginning of my journey into exploring various domains of Computer Science.
+As far as I can remember, I used to be a pretty whimsical kid. Up until high school I had explored (and given up on) writing poems and detective novels, calligraphy, painting and pencil sketching. At some point, not sure how, I had a whim of writing a computer program which could display shapes moving across the screen. A few google searches I did at the time weren't enough, and I gave up...until the first semester of college arrived. My introductory course on programming provided sufficient context, and I took the first opportunity to write my first game - [breakout](https://github.com/shivansh/breakout). This side project ended up opening several domains in Computer Science for me to explore, and marked the beginning of my venture.
 
-I like trekking, and had covered all the major trekking locations around Bangalore in the 6 months I got to stay there before the pandemic began. I also play an acoustic guitar.
+In my free time I usually play an acoustic guitar, occassionally read and up until the pandemic used to go on treks.
 
 I made this blog in a hope to share some of the interesting stuff which I come across, and for some nostalgia down the road.
 
