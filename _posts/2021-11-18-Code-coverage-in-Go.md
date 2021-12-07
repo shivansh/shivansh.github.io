@@ -87,3 +87,21 @@ behavior is that it allows us to control exactly which packages should
 contribute to the coverage. It might not be justified to get reduced coverage
 due to packages which are not supposed to have tests, for e.g. code generated
 from protobuf files.
+
+The consolidated cover profile can be generated via the following script -
+```
+#!/bin/bash
+set -eo pipefail
+
+go install github.com/wadey/gocovmerge@latest
+find ./bazel-testlogs/ -name "coverage.dat" | xargs rm -f
+rm -f bazel-cover.out
+bazel coverage --nocache_test_results ...:all
+find ./bazel-testlogs/ -name "coverage.dat" | xargs $GOPATH/bin/gocovmerge > bazel-cover.out
+go tool cover -func bazel-cover.out | grep total
+```
+
+The cover profile can now be used to generate overall code coverage in html -
+```
+$ go tool cover -html=bazel-cover.out
+```
