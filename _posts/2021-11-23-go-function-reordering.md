@@ -6,7 +6,7 @@ layout: single
 One of the nice things about Go is that it allows a function call expression to
 precede the corresponding function declaration, unlike for e.g. C. An
 implication of this property is that the function declarations in a program can
-be arranged in such a way that one reads a program in a top down manner.
+be arranged in such a way that one reads it in a top down manner.
 
 Consider the following program -
 
@@ -26,8 +26,8 @@ func foo() { // entry point
 ```
 
 The ordering of function declarations above might lead to one scrolling a bit
-before reaching and identifying the entry point `foo`. A valid alternate
-representation for the above program could be -
+before reaching and identifying the entry point `foo` (for relatively larger
+programs). A valid alternate representation for the above program could be -
 
 ```
 func foo() { // entry point
