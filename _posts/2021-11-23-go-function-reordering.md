@@ -45,7 +45,10 @@ func baz() { ... }
 ```
 
 This representation improves readability by allowing one to read the program
-from top to down.
+from top to down. If the function names are descriptive enough, then one might
+not necessarily need to know the specifics of `bar` and `baz` to get an idea of
+what `foo` is doing. This makes most of the information about the program
+available at the top.
 
 ## Rewriting the AST
 One can think of the above program as a directed graph where each node is a
@@ -78,8 +81,7 @@ retaining comment positions relative to AST nodes.
 ## Implementation
 
 The implementation is available
-[here](https://github.com/shivansh/rewrite/tree/main/reorder) and can used via
--
+[here](https://github.com/shivansh/rewrite/tree/main/reorder) and can be used via -
 ```
 $ go install github.com/shivansh/rewrite/reorder@latest
 $ $GOPATH/bin/reorder
