@@ -84,6 +84,6 @@ The implementation is available
 [here](https://github.com/shivansh/rewrite/tree/main/reorder) and can be used via -
 ```
 $ go install github.com/shivansh/rewrite/reorder@latest
-$ $GOPATH/bin/reorder
+$ reorder
 usage: reorder [-svg graph.svg] file.go
 ```
