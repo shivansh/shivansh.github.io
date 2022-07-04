@@ -25,7 +25,7 @@ en: &DEFAULT_EN
   feed_label            : "Feed"
   powered_by            : "Powered by"
   website_label         : "Website"
-  email_label           : "shivansh@freebsd.org"
+  email_label           : ""
 en-US:
   <<: *DEFAULT_EN
 en-UK:
