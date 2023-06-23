@@ -72,7 +72,7 @@ them. A nice walkthrough of these capabilities is documented
 In this case, we need to replace the nodes corresponding to function
 declarations to achieve the desired ordering. However, the corresponding
 comments would not be reordered since they are not attached to the AST nodes
-and are free-flowing (see issue
+and are free-floating (see issue
 [#20744](https://github.com/golang/go/issues/20744)). Package
 [dave/dst](https://pkg.go.dev/github.com/dave/dst@v0.26.2) solves exactly this
 shortcoming and provides similar APIs to Go's AST tooling with added support of
