@@ -81,9 +81,9 @@ retaining comment positions relative to AST nodes.
 ## Implementation
 
 The implementation is available
-[here](https://github.com/shivansh/rewrite/tree/main/reorder) and can be used via -
+[here](https://github.com/shivansh/tmp/tree/main/reorder) and can be used via -
 ```
-$ go install github.com/shivansh/rewrite/reorder@latest
+$ go install github.com/shivansh/tmp/reorder@latest
 $ reorder
 usage: reorder [-svg graph.svg] file.go
 ```
